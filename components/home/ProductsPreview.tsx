@@ -18,14 +18,14 @@ const PRODUCTS = [
     slug: "coconut",
     name: "Coconut",
     tagline: "Nature's finest, fresh from the source",
-    image: "/images/product-coconut.jpg",
+    image: "/images/product-desi-coconut.jpg",
     color: "#92400E",
   },
   {
     slug: "vegetables",
     name: "Vegetables",
     tagline: "Farm-fresh, carefully harvested",
-    image: "/images/product-vegetables.jpg",
+    image: "/images/product-desi-basket-vegetables.jpg",
     color: "#166534",
   },
   {
