@@ -18,28 +18,28 @@ const PRODUCTS = [
     slug: "coconut",
     name: "Coconut",
     tagline: "Nature's finest, fresh from the source",
-    image: "/images/product-desi-coconut.jpg",
+    image: "/images/product-coconut-v2.jpg",
     color: "#92400E",
   },
   {
     slug: "vegetables",
     name: "Vegetables",
     tagline: "Farm-fresh, carefully harvested",
-    image: "/images/product-desi-basket-vegetables.jpg",
+    image: "/images/product-vegetables-v2.jpg",
     color: "#166534",
   },
   {
     slug: "fruits",
     name: "Fruits",
     tagline: "Tropical freshness, exported with care",
-    image: "/images/product-fruits.jpg",
+    image: "/images/product-fruits-v3.jpg",
     color: "#B45309",
   },
   {
     slug: "spices",
     name: "Spices",
     tagline: "Authentic Indian flavours, globally loved",
-    image: "/images/product-spices.jpg",
+    image: "/images/product-spices-v2.jpg",
     color: "#991B1B",
   },
 ];
@@ -60,7 +60,7 @@ export default function ProductsPreview() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOptions}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
+          className="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4"
           role="list"
         >
           {PRODUCTS.map((product) => (
@@ -75,10 +75,9 @@ export default function ProductsPreview() {
                 className="group relative block aspect-[3/4] rounded-2xl overflow-hidden bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B65B2] focus-visible:ring-offset-2"
                 aria-label={`View ${product.name} products`}
               >
-                {/* Image */}
                 <Image
                   src={product.image}
-                  alt={`${product.name} export products`}
+                  alt={`Premium export quality ${product.name.toLowerCase()} sourced from India by Venus Global Exports`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"

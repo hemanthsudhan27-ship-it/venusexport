@@ -20,9 +20,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!product) return { title: "Product Not Found" };
 
   return {
-    title: `${product.name} Export from India`,
-    description: `Venus Global Exports offers premium ${product.name.toLowerCase()} for international markets. Sourced from India with quality assurance at every step.`,
-    alternates: { canonical: `/products/${slug}` },
+    title: `${product.name} Export from India | Venus Global Exports`,
+    description: product.metaDescription,
+    alternates: { canonical: `https://www.venusexportindia.com/products/${slug}` },
+    openGraph: {
+      title: `${product.name} Export from India`,
+      description: product.metaDescription,
+      url: `https://www.venusexportindia.com/products/${slug}`,
+      images: [
+        {
+          url: product.heroImage,
+          width: 800,
+          height: 600,
+          alt: `${product.name} export from India`,
+        },
+      ],
+    },
   };
 }
 
@@ -32,8 +45,25 @@ export default async function ProductDetailPage({ params }: Props) {
 
   if (!product) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    image: `https://www.venusexportindia.com${product.heroImage}`,
+    description: product.metaDescription,
+    brand: {
+      "@type": "Brand",
+      name: "Venus Global Exports",
+    },
+    category: product.category,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Breadcrumb */}
       <div className="pt-24 pb-0 bg-white">
         <div className="container-site">

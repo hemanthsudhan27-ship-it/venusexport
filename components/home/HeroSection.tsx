@@ -120,7 +120,7 @@ export default function HeroSection() {
         >
           <Image
             src="/images/hero-ship.jpg"
-            alt="Large container cargo ship sailing the ocean"
+            alt="Venus Global Exports large container cargo ship sailing the ocean for international food trade and logistics"
             fill
             priority
             quality={90}

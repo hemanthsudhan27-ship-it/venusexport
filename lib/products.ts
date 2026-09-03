@@ -17,6 +17,7 @@ export interface Product {
   category: string;
   tagline: string;
   description: string; // [PLACEHOLDER]
+  metaDescription: string;
   origin: string;
   variants: ProductVariant[];
   packaging: string[]; // [PLACEHOLDER]
@@ -36,6 +37,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Premium quality grains, naturally grown.",
     description:
       "Our premium rice selection represents the pinnacle of Indian agriculture. Sourced directly from highly vetted farms across the fertile plains of India, every grain is milled using state-of-the-art technology to preserve aroma, texture, and nutritional value. We guarantee strict adherence to international food safety standards, ensuring that every shipment delivers the authentic taste and uncompromising quality expected by global markets.",
+    metaDescription: "Import premium, authentic Indian rice including Sona Masoori, Basmati, and Palakkadan Matta from Venus Global Exports. We guarantee quality and safety.",
     origin: "India",
     variants: [
       {
@@ -74,6 +76,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Nature's finest, fresh from the source.",
     description:
       "Sourced from the finest coastal plantations, our coconuts are celebrated for their thick meat, sweet water, and high oil content. Through rigorous quality control from harvesting to packaging, we ensure that the natural freshness and nutritional integrity of the coconut are flawlessly maintained for our international clientele.",
+    metaDescription: "Venus Global Exports supplies premium fresh whole coconuts, desiccated coconut, and virgin coconut oil from India's finest coastal plantations.",
     origin: "India",
     variants: [
       {
@@ -104,8 +107,8 @@ export const PRODUCTS: Product[] = [
       Size: "13-15 inch circumference (Whole nuts)",
       Grade: "Premium Export Grade A",
     },
-    image: "/images/product-desi-coconut.jpg",
-    heroImage: "/images/product-desi-coconut.jpg",
+    image: "/images/product-coconut-v2.jpg",
+    heroImage: "/images/product-coconut-v2.jpg",
     color: "orange",
     availability: "Year-round consistent supply",
   },
@@ -116,6 +119,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Farm-fresh, carefully harvested and packed.",
     description:
       "Our farm-fresh vegetables are meticulously cultivated using sustainable farming practices. We implement an unbroken, state-of-the-art cold chain logistics system immediately after harvest, ensuring that our produce retains its crispness, vibrant color, and nutritional value upon arriving at global destinations.",
+    metaDescription: "Source export-grade Indian vegetables, from crisp greens to root vegetables, packed with our state-of-the-art cold chain logistics for maximum freshness.",
     origin: "India",
     variants: [
       {
@@ -146,8 +150,8 @@ export const PRODUCTS: Product[] = [
       "Storage Temp": "Strictly monitored 2°C - 8°C (varies by product)",
       Certification: "Phytosanitary & Global GAP certified",
     },
-    image: "/images/product-desi-basket-vegetables.jpg",
-    heroImage: "/images/product-desi-basket-vegetables.jpg",
+    image: "/images/product-vegetables-v2.jpg",
+    heroImage: "/images/product-vegetables-v2.jpg",
     color: "green",
     availability: "Seasonal varieties / Year-round staples",
   },
@@ -158,6 +162,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Tropical freshness, exported with care.",
     description:
       "Blessed with diverse agro-climatic zones, our selection of Indian fruits offers unparalleled sweetness, texture, and aroma. Each fruit is hand-picked at the optimal stage of maturity, meticulously graded, and carefully packed using advanced techniques to ensure a flawless presentation and taste experience worldwide.",
+    metaDescription: "Import premium tropical Indian fruits including Alphonso Mangoes, Pomegranates, and Grapes, carefully exported worldwide by Venus Global Exports.",
     origin: "India",
     variants: [
       {
@@ -188,8 +193,8 @@ export const PRODUCTS: Product[] = [
       "Shelf Life": "Extended through modified atmosphere packaging",
       "Storage Temp": "Strictly maintained cold chain",
     },
-    image: "/images/product-fruits.jpg",
-    heroImage: "/images/product-fruits.jpg",
+    image: "/images/product-fruits-v3.jpg",
+    heroImage: "/images/product-fruits-v3.jpg",
     color: "yellow",
     availability: "Seasonal (Mangoes, Grapes) / Year-round (Bananas)",
   },
@@ -200,6 +205,7 @@ export const PRODUCTS: Product[] = [
     tagline: "The authentic flavours of India, globally exported.",
     description:
       "India is the historical epicenter of the global spice trade, and our premium spice collection honors that legacy. We source the finest herbs and spices, utilizing advanced processing and sterilization techniques to lock in essential volatile oils. Our spices deliver robust, authentic flavors and vibrant colors to kitchens and food manufacturers around the world.",
+    metaDescription: "Authentic, high-quality Indian spices including black pepper, turmeric, cardamom, and spice blends available for bulk global export from Venus Global.",
     origin: "India",
     variants: [
       {
@@ -230,8 +236,8 @@ export const PRODUCTS: Product[] = [
       "Volatile Oil": "High essential oil content guaranteed",
       "Shelf Life": "Up to 24 months under optimal storage",
     },
-    image: "/images/product-spices.jpg",
-    heroImage: "/images/product-spices.jpg",
+    image: "/images/product-spices-v2.jpg",
+    heroImage: "/images/product-spices-v2.jpg",
     color: "red",
     availability: "Year-round consistent supply",
   },

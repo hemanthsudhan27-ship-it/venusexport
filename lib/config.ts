@@ -30,7 +30,7 @@ export const SITE_CONFIG = {
   },
 
   seo: {
-    siteUrl: "https://venusglobalexports.com",
+    siteUrl: "https://www.venusexportindia.com",
     defaultImage: "/images/og-default.jpg",
   },
 } as const;

@@ -22,7 +22,7 @@ export default function AboutPreview() {
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-slate-200">
               <Image
                 src="/images/product-coconut.jpg"
-                alt="Fresh agricultural products representing Venus Global Exports' quality sourcing"
+                alt="Premium fresh Indian coconuts representing Venus Global Exports' high-quality agricultural sourcing and export standards"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

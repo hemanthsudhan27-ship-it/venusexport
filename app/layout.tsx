@@ -14,7 +14,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://venusglobalexports.com"),
+  metadataBase: new URL("https://www.venusexportindia.com"),
   title: {
     default: "Venus Global Exports — Premium Food Export from India",
     template: "%s | Venus Global Exports",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://venusglobalexports.com",
+    url: "https://www.venusexportindia.com",
     siteName: "Venus Global Exports",
     title: "Venus Global Exports — Premium Food Export from India",
     description:
@@ -65,9 +65,29 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Venus Global Exports",
+    url: "https://www.venusexportindia.com",
+    logo: "https://www.venusexportindia.com/images/logo.svg",
+    description: "Premium food export from India, specializing in rice, coconut, vegetables, fruits, and spices.",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-8888888888",
+      contactType: "customer service",
+      areaServed: "Global",
+      availableLanguage: "en",
+    },
+  };
+
   return (
     <html lang="en" className={jakarta.variable}>
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <SplashScreen />
         <Navbar />
         <main id="main-content">{children}</main>
