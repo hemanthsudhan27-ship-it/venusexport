@@ -178,10 +178,10 @@ export default function AboutPage() {
             Our Future
           </h2>
           <p className="text-[#64748B] leading-relaxed mb-4">
-            [PLACEHOLDER — Describe the company&apos;s future plans: expansion into new product categories, new export destinations, planned certifications, or upcoming milestones.]
+            As we look to the horizon, Venus Global Exports is strategically expanding our global footprint. We are actively diversifying our product portfolio to include organic-certified spices, premium millets, and value-added coconut products, catering to the rising international demand for health-conscious and sustainable foods. Simultaneously, we are pursuing advanced international quality certifications to deepen our presence in stringent markets across Europe and North America.
           </p>
           <p className="text-[#64748B] leading-relaxed">
-            [PLACEHOLDER — Share the long-term ambition: what Venus Global Exports aims to become in the global food export industry, and the vision for growth.]
+            Our long-term ambition is to transcend traditional export models by establishing a transparent, tech-enabled supply chain that tracks produce from Indian farms directly to international retail shelves. We envision Venus Global Exports not just as a trading partner, but as a global hallmark of Indian agricultural excellence—driving sustainable growth, uplifting local farming communities, and redefining the standards of trust and quality in the international food export industry.
           </p>
         </div>
       </section>

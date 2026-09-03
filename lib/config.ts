@@ -18,7 +18,7 @@ export const SITE_CONFIG = {
     phone: "+91 9633 618 631",
     whatsapp: "919633618631",
     email: "vivekvadavathi007@gmail.com",
-    address: "India",
+    address: "Building no : 15\nAppanchira\nPoozhikol p.o\nKaduthuruthy\nKottayam\nKerala\nPin : 686604",
   },
 
   social: {

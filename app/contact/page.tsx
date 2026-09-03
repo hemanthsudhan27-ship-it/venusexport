@@ -310,7 +310,7 @@ export default function ContactPage() {
                         <path d="M6 0C3.243 0 1 2.243 1 5c0 4.17 4.42 10.492 4.61 10.76a.5.5 0 0 0 .78 0C6.58 15.492 11 9.17 11 5c0-2.757-2.243-5-5-5m0 7.5A2.5 2.5 0 0 1 6 2.5a2.5 2.5 0 0 1 0 5"/>
                       </svg>
                     </div>
-                    <span>{SITE_CONFIG.contact.address}</span>
+                    <span className="whitespace-pre-line">{SITE_CONFIG.contact.address}</span>
                   </div>
                 </address>
               </div>
