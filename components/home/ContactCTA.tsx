@@ -6,7 +6,7 @@ import { fadeInUp, viewportOptions } from "@/lib/animations";
 
 export default function ContactCTA() {
   return (
-    <section className="py-20 lg:py-28 bg-[#0B65B2] relative overflow-hidden" aria-labelledby="contact-cta-heading">
+    <section className="py-20 lg:py-28 bg-[#2E6B28] relative overflow-hidden" aria-labelledby="contact-cta-heading">
       {/* Background decoration */}
       <div
         className="absolute inset-0 opacity-[0.08]"
@@ -37,7 +37,7 @@ export default function ContactCTA() {
         >
           <motion.p
             variants={fadeInUp}
-            className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-200 mb-4"
+            className="text-xs font-semibold uppercase tracking-[0.2em] text-green-200 mb-4"
           >
             Get In Touch
           </motion.p>
@@ -52,7 +52,7 @@ export default function ContactCTA() {
             Food Export Partner?
           </motion.h2>
 
-          <motion.p variants={fadeInUp} className="text-lg text-blue-100 leading-relaxed mb-10">
+          <motion.p variants={fadeInUp} className="text-lg text-green-100 leading-relaxed mb-10">
             Let&apos;s connect and explore how we can bring quality products to your market.
           </motion.p>
 
@@ -67,7 +67,7 @@ export default function ContactCTA() {
               target="_blank"
               rel="noopener noreferrer"
               id="contact-cta-whatsapp"
-              className="inline-flex items-center gap-3 px-7 py-4 rounded-xl bg-[#25D366] text-white font-semibold text-sm hover:bg-[#1ab955] transition-all duration-200 group shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B65B2]"
+              className="inline-flex items-center gap-3 px-7 py-4 rounded-xl bg-[#25D366] text-white font-semibold text-sm hover:bg-[#1ab955] transition-all duration-200 group shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E6B28]"
               aria-label="Chat with us on WhatsApp"
             >
               <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -82,7 +82,7 @@ export default function ContactCTA() {
                 "Hello,\n\nI am interested in your export products and would like to get more information.\n\nProduct(s) of interest: \nQuantity: \nDestination country: \n\nRegards,"
               )}
               id="contact-cta-email"
-              className="inline-flex items-center gap-3 px-7 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm hover:bg-white/20 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B65B2]"
+              className="inline-flex items-center gap-3 px-7 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm hover:bg-white/20 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E6B28]"
               aria-label="Send us an email enquiry"
             >
               <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -92,7 +92,7 @@ export default function ContactCTA() {
             </a>
           </motion.div>
 
-          <motion.p variants={fadeInUp} className="mt-6 text-sm text-blue-200">
+          <motion.p variants={fadeInUp} className="mt-6 text-sm text-green-200">
             Or visit our{" "}
             <a href="/contact" className="text-white underline underline-offset-4 hover:no-underline">
               Contact Page

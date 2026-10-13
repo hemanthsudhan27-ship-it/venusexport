@@ -2,16 +2,19 @@
 
 @layer base {
   :root {
-    --blue-primary: #0B65B2;
-    --blue-dark: #084d88;
-    --blue-light: #1a7dd4;
-    --green-primary: #3D9148;
-    --green-dark: #2e6e37;
-    --navy: #0A1628;
-    --text-dark: #1A2433;
-    --text-muted: #64748B;
-    --bg-light: #F5F8FC;
-    --border-light: #E2EBF5;
+    --green-primary: #2E6B28;
+    --green-dark: #1E4A1A;
+    --green-light: #3D8C35;
+    --gold-primary: #C9A017;
+    --gold-dark: #A07E10;
+    --gold-light: #DDB82A;
+    --cream: #FDF6EC;
+    --cream-dark: #F5EBDA;
+    --navy: #0F1E08;
+    --text-dark: #1A2E0A;
+    --text-muted: #5A6B52;
+    --bg-light: #F3F7F0;
+    --border-light: #D4E0CC;
   }
 
   html {
@@ -27,7 +30,7 @@
   }
 
   ::selection {
-    background: #0B65B2;
+    background: #2E6B28;
     color: #fff;
   }
 
@@ -37,7 +40,7 @@
 
   /* Focus styles for accessibility */
   :focus-visible {
-    outline: 2px solid #0B65B2;
+    outline: 2px solid #2E6B28;
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -72,7 +75,7 @@
 
   /* Gradient text */
   .gradient-text {
-    background: linear-gradient(135deg, #0B65B2 0%, #1a7dd4 100%);
+    background: linear-gradient(135deg, #2E6B28 0%, #C9A017 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -82,7 +85,7 @@
   .section-divider {
     width: 3rem;
     height: 3px;
-    background: linear-gradient(to right, #0B65B2, #3D9148);
+    background: linear-gradient(to right, #2E6B28, #C9A017);
     border-radius: 9999px;
   }
 
@@ -92,7 +95,7 @@
   }
   .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(11, 101, 178, 0.12);
+    box-shadow: 0 16px 40px rgba(46, 107, 40, 0.15);
   }
 
   /* Hero title behind ship effect */
@@ -120,8 +123,34 @@
     background: #f1f5f9;
   }
   ::-webkit-scrollbar-thumb {
-    background: #0B65B2;
+    background: #2E6B28;
     border-radius: 3px;
+  }
+
+  /* WhatsApp Aura / Pulse Animation */
+  @keyframes whatsapp-aura {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+    50% {
+      box-shadow: 0 0 0 14px rgba(37, 211, 102, 0.15);
+    }
+    100% {
+      box-shadow: 0 0 0 24px rgba(37, 211, 102, 0);
+    }
+  }
+
+  @keyframes whatsapp-ring {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+  }
+
+  .whatsapp-aura {
+    animation: whatsapp-aura 2s ease-out infinite;
   }
 
   /* Reduced motion */

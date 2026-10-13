@@ -119,7 +119,7 @@ export default function HeroSection() {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         >
           <Image
-            src="/images/hero-ship.jpg"
+            src="/images/hero-new.jpg"
             alt="Venus Global Exports large container cargo ship sailing the ocean for international food trade and logistics"
             fill
             priority

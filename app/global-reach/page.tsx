@@ -48,7 +48,7 @@ export default function GlobalReachPage() {
         title="Connecting Markets Worldwide"
         subtitle="Global Reach"
         description="Venus Global Exports utilizes extensive sea and air freight networks to ensure timely and reliable delivery of premium food products anywhere in the world."
-        imageSrc="/images/hero-ship.jpg"
+        imageSrc="/images/hero-new.jpg"
       />
 
       {/* Map Section */}

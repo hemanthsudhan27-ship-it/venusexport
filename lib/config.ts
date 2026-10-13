@@ -1,5 +1,5 @@
 /**
- * Venus Global Exports — Central Configuration
+ * Venus Export — Central Configuration
  * =============================================
  * All contact details and company-wide config lives here.
  * Replace placeholder values with real client data before launch.
@@ -7,7 +7,7 @@
 
 export const SITE_CONFIG = {
   company: {
-    name: "Venus Global Exports",
+    name: "Venus Export",
     tagline: "From Our Land. To The World.",
     description:
       "A premier Indian food export company connecting quality agricultural products with global markets.",
@@ -15,10 +15,14 @@ export const SITE_CONFIG = {
   },
 
   contact: {
-    phone: "+91 9633 618 631",
-    whatsapp: "919633618631",
-    email: "vivekvadavathi007@gmail.com",
-    address: "Building no : 15\nAppanchira\nPoozhikol p.o\nKaduthuruthy\nKottayam\nKerala\nPin : 686604",
+    // ⚠️ Replace with actual phone number
+    phone: "+91 XXXXX XXXXX",
+    // ⚠️ Replace with actual WhatsApp number (digits only, with country code)
+    whatsapp: "91XXXXXXXXXX",
+    // ⚠️ Replace with actual email address
+    email: "info@venusexport.com",
+    // ⚠️ Replace with actual office address
+    address: "Your Address Line 1\nCity, State\nPin: XXXXXX\nIndia",
   },
 
   social: {

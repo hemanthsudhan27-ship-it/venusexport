@@ -62,7 +62,7 @@ export default function Navbar() {
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         isTransparent
           ? "bg-transparent"
-          : "bg-white/95 backdrop-blur-md border-b border-[#E2EBF5] shadow-sm pointer-events-auto"
+          : "bg-white/95 backdrop-blur-md border-b border-[#D4E0CC] shadow-sm pointer-events-auto"
       }`}
       role="banner"
     >
@@ -76,13 +76,13 @@ export default function Navbar() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-3 flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B65B2] rounded-lg"
-              aria-label="Venus Global Exports — Home"
+              className="flex items-center gap-3 flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2E6B28] rounded-lg"
+              aria-label="Venus Export — Home"
             >
               <div className="flex items-center">
                 <Image
-                  src="/images/logo.svg"
-                  alt="Venus Global Exports Logo"
+                  src="/logo/logo.png"
+                  alt="Venus Export Logo"
                   width={240}
                   height={64}
                   className="h-14 lg:h-16 w-auto object-contain"
@@ -101,8 +101,8 @@ export default function Navbar() {
                     href={link.href}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                       isActive
-                        ? "text-[#0B65B2] bg-[#EBF3FC]"
-                        : "text-[#1A2433] hover:text-[#0B65B2] hover:bg-[#F5F8FC]"
+                        ? "text-[#2E6B28] bg-[#E8F4E6]"
+                        : "text-[#1A2E0A] hover:text-[#2E6B28] hover:bg-[#F3F7F0]"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
@@ -117,13 +117,13 @@ export default function Navbar() {
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen((prev) => !prev)}
-              className="lg:hidden ml-6 flex flex-col justify-center items-center w-10 h-10 rounded-lg text-[#1A2433] hover:bg-[#F5F8FC] transition-colors duration-200"
+              className="lg:hidden ml-6 flex flex-col justify-center items-center w-10 h-10 rounded-lg text-[#1A2E0A] hover:bg-[#F3F7F0] transition-colors duration-200"
             >
               <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
               <motion.div className="flex flex-col gap-[5px] w-5" animate={menuOpen ? "open" : "closed"}>
-                <motion.span className="block h-0.5 w-5 origin-center rounded-full bg-[#1A2433]" variants={{ open: { rotate: 45, y: 7 }, closed: { rotate: 0, y: 0 } }} transition={{ duration: 0.25 }} />
-                <motion.span className="block h-0.5 w-5 rounded-full bg-[#1A2433]" variants={{ open: { opacity: 0, x: -8 }, closed: { opacity: 1, x: 0 } }} transition={{ duration: 0.2 }} />
-                <motion.span className="block h-0.5 w-5 origin-center rounded-full bg-[#1A2433]" variants={{ open: { rotate: -45, y: -7 }, closed: { rotate: 0, y: 0 } }} transition={{ duration: 0.25 }} />
+                <motion.span className="block h-0.5 w-5 origin-center rounded-full bg-[#1A2E0A]" variants={{ open: { rotate: 45, y: 7 }, closed: { rotate: 0, y: 0 } }} transition={{ duration: 0.25 }} />
+                <motion.span className="block h-0.5 w-5 rounded-full bg-[#1A2E0A]" variants={{ open: { opacity: 0, x: -8 }, closed: { opacity: 1, x: 0 } }} transition={{ duration: 0.2 }} />
+                <motion.span className="block h-0.5 w-5 origin-center rounded-full bg-[#1A2E0A]" variants={{ open: { rotate: -45, y: -7 }, closed: { rotate: 0, y: 0 } }} transition={{ duration: 0.25 }} />
               </motion.div>
             </button>
           </div>
@@ -150,13 +150,13 @@ export default function Navbar() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-3 flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B65B2] rounded-lg"
-              aria-label="Venus Global Exports — Home"
+              className="flex items-center gap-3 flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2E6B28] rounded-lg"
+              aria-label="Venus Export — Home"
             >
               <div className="flex items-center">
                 <Image
-                  src="/images/logo.svg"
-                  alt="Venus Global Exports Logo"
+                  src="/logo/logo.png"
+                  alt="Venus Export Logo"
                   width={200}
                   height={56}
                   className="h-12 w-auto object-contain"
@@ -175,8 +175,8 @@ export default function Navbar() {
                     href={link.href}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                       isActive
-                        ? "text-[#0B65B2] bg-[#EBF3FC]"
-                        : "text-[#1A2433] hover:text-[#0B65B2] hover:bg-[#F5F8FC]"
+                        ? "text-[#2E6B28] bg-[#E8F4E6]"
+                        : "text-[#1A2E0A] hover:text-[#2E6B28] hover:bg-[#F3F7F0]"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
@@ -190,7 +190,7 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <Link
                 href="/contact"
-                className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-xl bg-[#0B65B2] text-white text-sm font-semibold hover:bg-[#084d88] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B65B2] focus-visible:ring-offset-2"
+                className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-xl bg-[#2E6B28] text-white text-sm font-semibold hover:bg-[#1E4A1A] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2E6B28] focus-visible:ring-offset-2"
               >
                 Request an Enquiry
               </Link>
@@ -198,13 +198,13 @@ export default function Navbar() {
                 aria-label={menuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={menuOpen}
                 onClick={() => setMenuOpen((prev) => !prev)}
-                className="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg text-[#1A2433] hover:bg-[#F5F8FC] transition-colors duration-200"
+                className="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg text-[#1A2E0A] hover:bg-[#F3F7F0] transition-colors duration-200"
               >
                 <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
                 <motion.div className="flex flex-col gap-[5px] w-5" animate={menuOpen ? "open" : "closed"}>
-                  <motion.span className="block h-0.5 w-5 origin-center rounded-full bg-[#1A2433]" variants={{ open: { rotate: 45, y: 7 }, closed: { rotate: 0, y: 0 } }} transition={{ duration: 0.25 }} />
-                  <motion.span className="block h-0.5 w-5 rounded-full bg-[#1A2433]" variants={{ open: { opacity: 0, x: -8 }, closed: { opacity: 1, x: 0 } }} transition={{ duration: 0.2 }} />
-                  <motion.span className="block h-0.5 w-5 origin-center rounded-full bg-[#1A2433]" variants={{ open: { rotate: -45, y: -7 }, closed: { rotate: 0, y: 0 } }} transition={{ duration: 0.25 }} />
+                  <motion.span className="block h-0.5 w-5 origin-center rounded-full bg-[#1A2E0A]" variants={{ open: { rotate: 45, y: 7 }, closed: { rotate: 0, y: 0 } }} transition={{ duration: 0.25 }} />
+                  <motion.span className="block h-0.5 w-5 rounded-full bg-[#1A2E0A]" variants={{ open: { opacity: 0, x: -8 }, closed: { opacity: 1, x: 0 } }} transition={{ duration: 0.2 }} />
+                  <motion.span className="block h-0.5 w-5 origin-center rounded-full bg-[#1A2E0A]" variants={{ open: { rotate: -45, y: -7 }, closed: { rotate: 0, y: 0 } }} transition={{ duration: 0.25 }} />
                 </motion.div>
               </button>
             </div>
@@ -222,7 +222,7 @@ export default function Navbar() {
             initial="closed"
             animate="open"
             exit="closed"
-            className="lg:hidden overflow-hidden bg-white border-t border-[#E2EBF5]"
+            className="lg:hidden overflow-hidden bg-white border-t border-[#D4E0CC]"
             role="navigation"
             aria-label="Mobile navigation"
           >
@@ -236,8 +236,8 @@ export default function Navbar() {
                     href={link.href}
                     className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors duration-200 ${
                       isActive
-                        ? "text-[#0B65B2] bg-[#EBF3FC]"
-                        : "text-[#1A2433] hover:text-[#0B65B2] hover:bg-[#F5F8FC]"
+                        ? "text-[#2E6B28] bg-[#E8F4E6]"
+                        : "text-[#1A2E0A] hover:text-[#2E6B28] hover:bg-[#F3F7F0]"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                     onClick={() => setMenuOpen(false)}
@@ -246,12 +246,12 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <div className="pt-3 pb-1 border-t border-[#E2EBF5] mt-2">
+              <div className="pt-3 pb-1 border-t border-[#D4E0CC] mt-2">
                 <Link
                   href="/contact"
                   id="mobile-enquiry-cta"
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-center justify-center w-full px-5 py-3 rounded-xl bg-[#0B65B2] text-white text-sm font-semibold hover:bg-[#084d88] transition-colors duration-200"
+                  className="flex items-center justify-center w-full px-5 py-3 rounded-xl bg-[#2E6B28] text-white text-sm font-semibold hover:bg-[#1E4A1A] transition-colors duration-200"
                 >
                   Request an Enquiry
                 </Link>

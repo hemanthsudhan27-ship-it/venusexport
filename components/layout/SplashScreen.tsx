@@ -20,7 +20,7 @@ export default function SplashScreen() {
   }, []);
 
   const textLine1 = "venus";
-  const textLine2 = "global exports";
+  const textLine2 = "export";
 
   return (
     <AnimatePresence>
@@ -44,8 +44,8 @@ export default function SplashScreen() {
               style={{ clipPath: "inset(0 0 25% 0)" }}
             >
               <Image
-                src="/images/logo.svg"
-                alt="Venus Global Exports Logo"
+                src="/logo/logo.png"
+                alt="Venus Export Logo"
                 fill
                 className="object-contain drop-shadow-lg object-top"
                 priority
