@@ -133,14 +133,14 @@ export default function HeroSection() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(10,22,40,0.55) 0%, rgba(10,22,40,0.1) 35%, rgba(10,22,40,0.1) 55%, rgba(10,22,40,0.85) 100%)",
+                "linear-gradient(to bottom, rgba(5,14,27,0.65) 0%, rgba(5,14,27,0.15) 30%, rgba(5,14,27,0.25) 55%, rgba(5,14,27,0.95) 100%)",
             }}
           />
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to right, rgba(10,22,40,0.5) 0%, transparent 40%, transparent 60%, rgba(10,22,40,0.5) 100%)",
+                "linear-gradient(to right, rgba(5,14,27,0.75) 0%, rgba(5,14,27,0.4) 45%, transparent 70%, rgba(5,14,27,0.4) 100%)",
             }}
           />
         </motion.div>
@@ -167,7 +167,7 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 mb-5"
             >
               <span className="w-6 h-px bg-[#3D9148]" aria-hidden="true" />
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#86EFAC]">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white drop-shadow-md">
                 Premium Food Exports • Sea & Air Freight
               </span>
             </motion.div>
@@ -191,7 +191,7 @@ export default function HeroSection() {
                 hidden: { opacity: 0, y: 16 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
               }}
-              className="text-lg text-slate-300 leading-relaxed mb-8 max-w-lg"
+              className="text-lg text-white/90 leading-relaxed mb-8 max-w-lg drop-shadow-md"
             >
               Connecting quality food products with global markets.
             </motion.p>
