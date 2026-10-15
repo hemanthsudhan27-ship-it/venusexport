@@ -57,11 +57,11 @@ export default function DottedWorldMap() {
               key={`route-${i}`}
               d={`M ${origin.cx} ${origin.cy} Q ${(origin.cx + dest.cx) / 2} ${Math.min(dest.cy, origin.cy) - 200} ${dest.cx} ${dest.cy}`}
               fill="none"
-              stroke="#7DD3FC"
-              strokeWidth="4"
-              strokeDasharray="10 15"
+              stroke="#D7A03F"
+              strokeWidth="3.5"
+              strokeDasharray="8 12"
               initial={{ pathLength: 0, opacity: 0 }}
-              whileInView={{ pathLength: 1, opacity: 0.8 }}
+              whileInView={{ pathLength: 1, opacity: 0.85 }}
               viewport={viewportOptions}
               transition={{ duration: 1.5, delay: i * 0.2, ease: "easeInOut" }}
             />
@@ -76,8 +76,8 @@ export default function DottedWorldMap() {
             viewport={viewportOptions}
             transition={{ delay: 0.8 + i * 0.15, duration: 0.4 }}
           >
-            <circle cx={dest.cx} cy={dest.cy} r={dest.r} fill="#3D9148" opacity="0.9" />
-            <circle cx={dest.cx} cy={dest.cy} r={dest.r + 6} fill="none" stroke="#3D9148" strokeWidth="3" opacity="0.4" />
+            <circle cx={dest.cx} cy={dest.cy} r={dest.r} fill="#10B981" opacity="0.9" />
+            <circle cx={dest.cx} cy={dest.cy} r={dest.r + 6} fill="none" stroke="#10B981" strokeWidth="2" opacity="0.4" />
           </motion.g>
         ))}
 
@@ -88,11 +88,11 @@ export default function DottedWorldMap() {
           viewport={viewportOptions}
           transition={{ duration: 0.5 }}
         >
-          <circle cx={1420} cy={410} r={16} fill="#0B65B2" opacity="0.9" />
-          <circle cx={1420} cy={410} r={24} fill="none" stroke="#0B65B2" strokeWidth="4" opacity="0.6" />
-          <circle cx={1420} cy={410} r={32} fill="none" stroke="#0B65B2" strokeWidth="2" opacity="0.3" />
-          <text x={1450} y={395} fill="white" fontSize="24" fontWeight="bold" fontFamily="sans-serif">
-            India
+          <circle cx={1420} cy={410} r={16} fill="#D7A03F" opacity="0.95" />
+          <circle cx={1420} cy={410} r={24} fill="none" stroke="#D7A03F" strokeWidth="4" opacity="0.6" />
+          <circle cx={1420} cy={410} r={32} fill="none" stroke="#D7A03F" strokeWidth="2" opacity="0.3" />
+          <text x={1450} y={395} fill="#D7A03F" fontSize="24" fontWeight="bold" fontFamily="sans-serif">
+            India (Origin)
           </text>
         </motion.g>
       </svg>

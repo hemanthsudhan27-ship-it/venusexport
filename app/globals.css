@@ -1,20 +1,57 @@
 @import "tailwindcss";
 
+/* =============================================
+   VENUS GLOBAL EXPORTS — DESIGN SYSTEM
+   Inspired by Nikosi Exports' premium structure
+   ============================================= */
+
 @layer base {
   :root {
-    --green-primary: #2E6B28;
-    --green-dark: #1E4A1A;
-    --green-light: #3D8C35;
-    --gold-primary: #C9A017;
-    --gold-dark: #A07E10;
-    --gold-light: #DDB82A;
-    --cream: #FDF6EC;
-    --cream-dark: #F5EBDA;
-    --navy: #0F1E08;
-    --text-dark: #1A2E0A;
-    --text-muted: #5A6B52;
-    --bg-light: #F3F7F0;
-    --border-light: #D4E0CC;
+    /* ── Brand Colors ── */
+    --crimson:        #C8102E;
+    --crimson-dark:   #A90D28;
+    --crimson-deep:   #8B0E22;
+    --navy:           #06265C;
+    --navy-dark:      #041540;
+    --navy-ink:       #08063A;
+    --gold:           #D7A03F;
+    --gold-light:     #E8BA5A;
+    --lime-accent:    #B9D32A;
+
+    /* ── Neutral Palette ── */
+    --white:          #FFFFFF;
+    --off-white:      #F8F9FA;
+    --bg-light:       #F4F6F8;
+    --bg-card:        #FFFFFF;
+    --ink:            #0F1723;
+    --ink-mid:        #23364D;
+    --ink-soft:       #4B5563;
+    --border:         #DCE3EA;
+    --border-light:   #E8EDF2;
+
+    /* ── Text ── */
+    --text-heading:   #08063A;
+    --text-body:      #374151;
+    --text-muted:     #6B7280;
+    --text-white:     #FFFFFF;
+
+    /* ── Shadows ── */
+    --shadow-sm:      0 2px 8px rgba(0,0,0,0.06);
+    --shadow-md:      0 8px 25px rgba(0,0,0,0.10);
+    --shadow-lg:      0 20px 60px rgba(0,0,0,0.15);
+    --shadow-card:    0 10px 40px rgba(6,38,92,0.10);
+
+    /* ── Radii ── */
+    --radius-sm:      8px;
+    --radius-md:      16px;
+    --radius-lg:      24px;
+    --radius-xl:      32px;
+    --radius-pill:    9999px;
+
+    /* ── Transitions ── */
+    --transition:     0.3s ease;
+    --transition-fast:0.2s ease;
+    --transition-slow:0.5s ease;
   }
 
   html {
@@ -22,15 +59,17 @@
   }
 
   body {
-    font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
-    color: var(--text-dark);
-    background: #fff;
+    font-family: var(--font-jakarta), 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-body);
+    background: var(--white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
   }
 
   ::selection {
-    background: #2E6B28;
+    background: var(--crimson);
     color: #fff;
   }
 
@@ -38,19 +77,22 @@
     box-sizing: border-box;
   }
 
-  /* Focus styles for accessibility */
   :focus-visible {
-    outline: 2px solid #2E6B28;
+    outline: 2px solid var(--crimson);
     outline-offset: 3px;
     border-radius: 4px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-heading);
+    line-height: 1.15;
+    font-weight: 700;
   }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 
+  /* ── Container ── */
   .container-site {
     max-width: 1280px;
     margin-left: auto;
@@ -58,14 +100,12 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-
   @media (min-width: 640px) {
     .container-site {
       padding-left: 2rem;
       padding-right: 2rem;
     }
   }
-
   @media (min-width: 1024px) {
     .container-site {
       padding-left: 3rem;
@@ -73,92 +113,376 @@
     }
   }
 
-  /* Gradient text */
+  /* ── Section Spacing ── */
+  .section-pad {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  @media (min-width: 1024px) {
+    .section-pad {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  /* ── Typography Tokens ── */
+  .display-title {
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--text-heading);
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--text-heading);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--crimson);
+  }
+
+  .eyebrow::before, .eyebrow::after {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 2px;
+    background: var(--crimson);
+    border-radius: 9999px;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    background: var(--crimson);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+    border: 2px solid transparent;
+    transition: background var(--transition), transform var(--transition-fast);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-primary:hover {
+    background: var(--crimson-dark);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    background: transparent;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+    border: 2px solid rgba(255,255,255,0.5);
+    transition: all var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-outline:hover {
+    background: #fff;
+    color: var(--navy);
+    border-color: #fff;
+  }
+
+  .btn-ghost-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    background: transparent;
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--border);
+    transition: all var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-ghost-dark:hover {
+    border-color: var(--crimson);
+    color: var(--crimson);
+  }
+
+  /* ── Cards ── */
+  .card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* ── Section Divider ── */
+  .section-divider {
+    width: 3rem;
+    height: 3px;
+    background: linear-gradient(to right, var(--crimson), var(--gold));
+    border-radius: 9999px;
+  }
+
+  /* ── Gradient Text ── */
   .gradient-text {
-    background: linear-gradient(135deg, #2E6B28 0%, #C9A017 100%);
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--gold) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Section divider */
-  .section-divider {
-    width: 3rem;
-    height: 3px;
-    background: linear-gradient(to right, #2E6B28, #C9A017);
+  /* ── Subtitle Badge (★ label ★) ── */
+  .subtitle-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    margin-bottom: 1rem;
+  }
+  .subtitle-badge .badge-line {
+    display: block;
+    width: 2.5rem;
+    height: 2px;
+    background: var(--crimson);
     border-radius: 9999px;
   }
-
-  /* Subtle card hover */
-  .card-hover {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .subtitle-badge-light {
+    color: rgba(255,255,255,0.75);
   }
-  .card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(46, 107, 40, 0.15);
+  .subtitle-badge-light .badge-line {
+    background: var(--crimson);
   }
 
-  /* Hero title behind ship effect */
-  .hero-text-layer {
+  /* ── Marquee ── */
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    animation: marquee-scroll 30s linear infinite;
+    width: max-content;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* ── Scroll-Reveal (Intersection Observer base class) ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ── Sticky Card Stack ── */
+  .sticky-card-container {
+    position: relative;
+  }
+  .sticky-card-item {
+    position: sticky;
+    top: 100px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  /* ── Counter ── */
+  @keyframes count-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Nav Underline ── */
+  .nav-link-underline {
+    position: relative;
+  }
+  .nav-link-underline::after {
+    content: '';
     position: absolute;
-    inset: 0;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--crimson);
+    border-radius: 9999px;
+    transition: width var(--transition);
+  }
+  .nav-link-underline:hover::after,
+  .nav-link-underline.active::after {
+    width: 100%;
+  }
+
+  /* ── Hover Underline Text (dropdown links) ── */
+  .dropdown-link {
     display: flex;
     align-items: center;
-    justify-content: center;
-    z-index: 10;
-    pointer-events: none;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink-mid);
+    padding: 0.45rem 0;
+    transition: color var(--transition), transform var(--transition-fast);
+    text-decoration: none;
+  }
+  .dropdown-link::before {
+    content: '›';
+    color: var(--crimson);
+    font-size: 1.1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .dropdown-link:hover {
+    color: var(--crimson);
+    transform: translateX(6px);
   }
 
-  .hero-ship-layer {
+  /* ── Hero gradient overlays ── */
+  .hero-overlay-navy {
     position: absolute;
     inset: 0;
-    z-index: 20;
+    background: linear-gradient(
+      90deg,
+      rgba(6,38,92, 0.96) 0%,
+      rgba(6,38,92, 0.90) 35%,
+      rgba(6,38,92, 0.55) 60%,
+      rgba(6,38,92, 0.15) 80%,
+      rgba(6,38,92, 0) 100%
+    );
+    pointer-events: none;
   }
-
-  /* Scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #f1f5f9;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #2E6B28;
-    border-radius: 3px;
-  }
-
-  /* WhatsApp Aura / Pulse Animation */
-  @keyframes whatsapp-aura {
-    0% {
-      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
-    }
-    50% {
-      box-shadow: 0 0 0 14px rgba(37, 211, 102, 0.15);
-    }
-    100% {
-      box-shadow: 0 0 0 24px rgba(37, 211, 102, 0);
+  @media (max-width: 768px) {
+    .hero-overlay-navy {
+      background: rgba(6,38,92,0.78);
     }
   }
 
-  @keyframes whatsapp-ring {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.08);
-    }
+  /* ── Services card – dark overlay ── */
+  .services-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    border-radius: inherit;
+    transition: background var(--transition);
+    z-index: 1;
+  }
+  .services-card:hover .services-card-overlay {
+    background: rgba(0,0,0,0.60);
   }
 
-  .whatsapp-aura {
-    animation: whatsapp-aura 2s ease-out infinite;
+  /* ── Stats section dark bg ── */
+  .stats-section {
+    position: relative;
+    overflow: hidden;
+    background: var(--navy-ink);
+  }
+  .stats-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(200,16,46,0.15) 0%, transparent 60%),
+      radial-gradient(circle at 80% 50%, rgba(6,38,92,0.6) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
   }
 
-  /* Reduced motion */
+  /* ── WhatsApp Float ── */
+  @keyframes whatsapp-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    50%       { transform: scale(1.06); box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+  }
+  .whatsapp-float {
+    animation: whatsapp-pulse 2s infinite;
+  }
+
+  @keyframes pulse-ring {
+    0%   { transform: scale(0.8); opacity: 0.8; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--bg-light); }
+  ::-webkit-scrollbar-thumb { background: var(--crimson); border-radius: 9999px; }
+
+  /* ── Reduced Motion ── */
   @media (prefers-reduced-motion: reduce) {
     * {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+  }
+
+  /* ── Back to top ── */
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 44px;
+    height: 44px;
+    background: var(--crimson);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition), background var(--transition);
+    z-index: 40;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .back-to-top:hover {
+    transform: translateY(-3px);
+    background: var(--crimson-dark);
   }
 }
