@@ -1,5 +1,5 @@
 /**
- * Venus Global Exports — Shared Animation Variants
+ * Venus Export — Shared Animation Variants
  * =================================================
  * Centralized Framer Motion variants for consistent animations.
  */

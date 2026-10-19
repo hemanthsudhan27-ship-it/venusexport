@@ -60,7 +60,7 @@ export default function ContactPage() {
       .map(([k, v]) => `${k}: ${v}`)
       .join("\n");
 
-    window.location.href = getMailtoUrl("Export Enquiry — Venus Global Exports", body);
+    window.location.href = getMailtoUrl("Export Enquiry — Venus Export", body);
 
     // Simulate form submission
     setTimeout(() => {
@@ -311,7 +311,7 @@ export default function ContactPage() {
 
               {/* Quick WhatsApp */}
               <a
-                href={getWhatsAppUrl("Hello, I would like to enquire about Venus Global Exports products.")}
+                href={getWhatsAppUrl("Hello, I would like to enquire about Venus Export products.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 id="contact-quick-whatsapp"

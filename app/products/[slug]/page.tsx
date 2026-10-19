@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!product) return { title: "Product Not Found" };
 
   return {
-    title: `${product.name} Export from India | Venus Global Exports`,
+    title: `${product.name} Export from India | Venus Export`,
     description: product.metaDescription,
     alternates: { canonical: `https://www.venusexportindia.com/products/${slug}` },
     openGraph: {
@@ -53,7 +53,7 @@ export default async function ProductDetailPage({ params }: Props) {
     description: product.metaDescription,
     brand: {
       "@type": "Brand",
-      name: "Venus Global Exports",
+      name: "Venus Export",
     },
     category: product.category,
   };
@@ -138,7 +138,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 </Link>
                 <a
                   href={getWhatsAppUrl(
-                    `Hello, I am interested in ordering ${product.name} from Venus Global Exports. Please provide more details.`
+                    `Hello, I am interested in ordering ${product.name} from Venus Export. Please provide more details.`
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -160,7 +160,7 @@ export default async function ProductDetailPage({ params }: Props) {
       {/* Product Detail Grid */}
       <section className="py-16 bg-[#F5F8FC]" aria-label="Product details">
         <div className="container-site">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
             {/* Varieties */}
             <div className="bg-white rounded-2xl p-6 border border-[#E2EBF5]">
@@ -194,19 +194,6 @@ export default async function ProductDetailPage({ params }: Props) {
                 ))}
               </ul>
             </div>
-
-            {/* Specifications */}
-            <div className="bg-white rounded-2xl p-6 border border-[#E2EBF5]">
-              <h2 className="text-sm font-bold text-[#0A1628] uppercase tracking-wide mb-4">Specifications</h2>
-              <dl className="space-y-3">
-                {Object.entries(product.specifications).map(([key, value]) => (
-                  <div key={key} className="flex items-start justify-between gap-4">
-                    <dt className="text-xs text-[#64748B]">{key}</dt>
-                    <dd className="text-xs font-semibold text-[#0A1628] text-right">{value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
           </div>
         </div>
       </section>
@@ -224,7 +211,7 @@ export default async function ProductDetailPage({ params }: Props) {
               </div>
               <h2 className="text-base font-bold text-[#0A1628] mb-3">Quality Assurance</h2>
               <p className="text-sm text-[#64748B] leading-relaxed">
-                Each batch of {product.name.toLowerCase()} undergoes strict quality control prior to dispatch. We implement multi-stage inspections for grading, sizing, and impurity checks. Every shipment is accompanied by comprehensive phytosanitary certificates and lab reports confirming adherence to global food safety standards.
+                Each batch of {product.name.toLowerCase()} undergoes strict quality control prior to dispatch. We implement multi-stage inspections for grading, sizing, and impurity checks. Every shipment is accompanied by comprehensive phytosanitary certificates and lab reports confirming adherence to international food safety standards.
               </p>
             </div>
             <div className="rounded-2xl border border-[#E2EBF5] p-6">

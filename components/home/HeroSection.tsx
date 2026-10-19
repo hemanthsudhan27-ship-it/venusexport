@@ -19,7 +19,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-new.jpg"
-          alt="Venus Global Exports premium food export — cargo shipping"
+          alt="Venus Export premium food export — cargo shipping"
           fill
           priority
           quality={90}
@@ -66,7 +66,7 @@ export default function HeroSection() {
             >
               <span className="subtitle-badge subtitle-badge-light">
                 <span className="badge-line" />
-                WELCOME TO VENUS GLOBAL EXPORTS
+                WELCOME TO VENUS EXPORT
                 <span className="badge-line" />
               </span>
             </motion.div>
@@ -92,7 +92,7 @@ export default function HeroSection() {
               }}
               className="text-lg lg:text-xl text-white/85 leading-relaxed mb-10 max-w-xl"
             >
-              Venus Global Exports is India&apos;s trusted food export partner — delivering premium rice, coconut, vegetables, fruits, and spices to global markets with uncompromising quality.
+              Venus Export is India&apos;s trusted food export partner — delivering premium rice, coconut, vegetables, fruits, and spices to international markets with uncompromising quality.
             </motion.p>
 
             {/* CTAs */}
@@ -135,7 +135,7 @@ export default function HeroSection() {
               {[
                 { icon: "🌾", text: "Rice & Coconut" },
                 { icon: "🌶️", text: "Spices & Herbs" },
-                { icon: "🌍", text: "Global Export" },
+                { icon: "🌍", text: "Worldwide Export" },
                 { icon: "✓", text: "Quality Certified" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2">

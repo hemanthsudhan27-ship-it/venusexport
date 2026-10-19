@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
     name: "Venus Export",
     tagline: "From Our Land. To The World.",
     description:
-      "A premier Indian food export company connecting quality agricultural products with global markets.",
+      "A premier Indian food export company connecting quality agricultural products with international markets.",
     country: "India",
   },
 
@@ -51,7 +51,7 @@ export function getMailtoUrl(
   body?: string
 ): string {
   const params = new URLSearchParams();
-  params.set("subject", subject || "Export Enquiry — Venus Global Exports");
+  params.set("subject", subject || "Export Enquiry — Venus Export");
   params.set("body", body || "Hello, I am interested in your export products. Please provide more information.");
   const query = params.toString();
   return `mailto:${SITE_CONFIG.contact.email}${query ? `?${query}` : ""}`;

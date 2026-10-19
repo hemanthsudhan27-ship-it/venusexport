@@ -16,11 +16,11 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.venusexportindia.com"),
   title: {
-    default: "Venus Global Exports — Premium Food Export from India",
-    template: "%s | Venus Global Exports",
+    default: "Venus Export — Premium Food Export from India",
+    template: "%s | Venus Export",
   },
   description:
-    "Venus Global Exports is India's trusted food export partner. We export premium rice, coconut, vegetables, fruits, and spices to global markets.",
+    "Venus Export is India's trusted food export partner. We export premium rice, coconut, vegetables, fruits, and spices to international markets.",
   keywords: [
     "food export India",
     "rice export",
@@ -29,30 +29,30 @@ export const metadata: Metadata = {
     "fruit export India",
     "vegetable export",
     "agricultural export",
-    "Venus Global Exports",
+    "Venus Export",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.venusexportindia.com",
-    siteName: "Venus Global Exports",
-    title: "Venus Global Exports — Premium Food Export from India",
+    siteName: "Venus Export",
+    title: "Venus Export — Premium Food Export from India",
     description:
-      "Connecting quality Indian food products with global markets. Export partner for rice, coconut, vegetables, fruits, and spices.",
+      "Connecting quality Indian food products with international markets. Export partner for rice, coconut, vegetables, fruits, and spices.",
     images: [
       {
         url: "/images/og-default.jpg",
         width: 1200,
         height: 630,
-        alt: "Venus Global Exports",
+        alt: "Venus Export",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Venus Global Exports — Premium Food Export from India",
+    title: "Venus Export — Premium Food Export from India",
     description:
-      "Connecting quality Indian food products with global markets.",
+      "Connecting quality Indian food products with international markets.",
   },
   robots: {
     index: true,
@@ -68,7 +68,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Venus Global Exports",
+    name: "Venus Export",
     url: "https://www.venusexportindia.com",
     logo: "https://www.venusexportindia.com/images/logo.svg",
     description: "Premium food export from India, specializing in rice, coconut, vegetables, fruits, and spices.",
@@ -76,7 +76,7 @@ export default function RootLayout({
       "@type": "ContactPoint",
       telephone: "+91-8888888888",
       contactType: "customer service",
-      areaServed: "Global",
+      areaServed: "Worldwide",
       availableLanguage: "en",
     },
   };

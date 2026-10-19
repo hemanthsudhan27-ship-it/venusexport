@@ -9,7 +9,7 @@ import PageHeader from "@/components/ui/PageHeader";
 export const metadata: Metadata = {
   title: "Our Products",
   description:
-    "Explore Venus Global Exports' premium product catalogue: rice, coconut, vegetables, fruits, and spices — sourced from India for international markets.",
+    "Explore Venus Export's premium product catalogue: rice, coconut, vegetables, fruits, and spices — sourced from India for international markets.",
   alternates: { canonical: "/products" },
 };
 

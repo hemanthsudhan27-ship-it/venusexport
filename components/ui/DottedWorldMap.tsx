@@ -47,7 +47,7 @@ export default function DottedWorldMap() {
       <svg
         viewBox="0 0 2000 857"
         className="w-full h-full absolute inset-0 z-10 overflow-visible"
-        aria-label="World map showing Venus Global Exports origin in India and international destinations"
+        aria-label="World map showing Venus Export origin in India and international destinations"
       >
         {/* Route arcs from India */}
         {MAP_DOTS.filter(d => !d.origin).map((dest, i) => {

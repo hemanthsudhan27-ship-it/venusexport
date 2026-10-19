@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/global-reach`,
+      url: `${BASE_URL}/worldwide-reach`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,

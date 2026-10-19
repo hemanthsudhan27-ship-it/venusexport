@@ -13,11 +13,11 @@ const DESTINATIONS = [
   { name: "Africa", regions: "East & West Africa", flag: "🇰🇪 🇿🇦" },
 ];
 
-export default function GlobalReachPreview() {
+export default function WorldwideReachPreview() {
   return (
     <section
       className="py-24 lg:py-32 bg-[#060D15] relative overflow-hidden"
-      aria-labelledby="global-reach-preview-heading"
+      aria-labelledby="worldwide-reach-preview-heading"
     >
       {/* Background glow and subtle dot grid */}
       <div
@@ -43,13 +43,13 @@ export default function GlobalReachPreview() {
             </span>
           </div>
           <h2
-            id="global-reach-preview-heading"
+            id="worldwide-reach-preview-heading"
             className="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight"
           >
             From India To The World
           </h2>
           <p className="mt-4 text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Venus Global Exports bridges Indian harvest excellence with international consumer markets through seamless multi-modal logistics and strict quality compliance.
+            Venus Export bridges Indian harvest excellence with international consumer markets through seamless multi-modal logistics and strict quality compliance.
           </p>
         </div>
 
@@ -116,11 +116,11 @@ export default function GlobalReachPreview() {
         {/* Action Button */}
         <div className="text-center">
           <Link
-            href="/global-reach"
-            id="global-reach-preview-cta"
+            href="/worldwide-reach"
+            id="worldwide-reach-preview-cta"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-[#D7A03F] to-[#E5C06E] text-[#0A100D] font-bold text-sm hover:brightness-110 shadow-lg shadow-[#D7A03F]/20 hover:shadow-[#D7A03F]/35 transition-all duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7A03F]"
           >
-            Explore Global Corridors & Port Hubs
+            Explore Worldwide Corridors & Port Hubs
             <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" className="group-hover:translate-x-1 transition-transform" aria-hidden="true">
               <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
             </svg>

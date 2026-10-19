@@ -57,7 +57,7 @@ export default function QualitySection() {
             International Quality Standards
           </h2>
           <p className="mt-4 text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Quality is not an inspection checkpoint at Venus Global Exports — it is the cornerstone of our entire supply chain.
+            Quality is not an inspection checkpoint at Venus Export — it is the cornerstone of our entire supply chain.
           </p>
         </div>
 

@@ -36,7 +36,7 @@ export default function ContactCTA() {
           <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/10 mb-6 backdrop-blur-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#D7A03F]">
-              Direct Global Procurement • 24h Turnaround
+              Direct Worldwide Procurement • 24h Turnaround
             </span>
           </motion.div>
 
@@ -61,7 +61,7 @@ export default function ContactCTA() {
           >
             <a
               href={getWhatsAppUrl(
-                "Hello Venus Global Exports, I am interested in your export commodities and would like to request a quotation."
+                "Hello Venus Export, I am interested in your export commodities and would like to request a quotation."
               )}
               target="_blank"
               rel="noopener noreferrer"
@@ -77,8 +77,8 @@ export default function ContactCTA() {
 
             <a
               href={getMailtoUrl(
-                "Export RFQ Inquiry — Venus Global Exports",
-                "Hello Venus Global Exports Trade Desk,\n\nI am requesting a quotation for export commodities:\n\nProduct(s) of interest: \nEstimated Volume (MT / Containers): \nDestination Port (CIF / FOB): \nTarget Shipment Date: \n\nCompany Name: \nContact Person: \nCountry: "
+                "Export RFQ Inquiry — Venus Export",
+                "Hello Venus Export Trade Desk,\n\nI am requesting a quotation for export commodities:\n\nProduct(s) of interest: \nEstimated Volume (MT / Containers): \nDestination Port (CIF / FOB): \nTarget Shipment Date: \n\nCompany Name: \nContact Person: \nCountry: "
               )}
               id="contact-cta-email"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-white/[0.08] border border-white/20 text-white font-bold text-sm hover:bg-white/[0.15] hover:border-[#D7A03F] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7A03F]"

@@ -5,13 +5,13 @@ import PageHeader from "@/components/ui/PageHeader";
 export const metadata: Metadata = {
   title: "Quality Assurance",
   description:
-    "Learn about Venus Global Exports' quality commitment — from sourcing to packaging, we ensure every product meets international food safety standards.",
+    "Learn about Venus Export's quality commitment — from sourcing to packaging, we ensure every product meets international food safety standards.",
   alternates: { canonical: "/quality" },
 };
 
 const CERTIFICATIONS = [
   { id: 1, name: "FSSAI Certified", body: "Food Safety and Standards Authority of India", desc: "Ensures all our food products are safe, hygienic, and adhere to strict Indian quality standards." },
-  { id: 2, name: "APEDA Registered", body: "Govt. of India", desc: "Registered for the export of scheduled agricultural products, ensuring global compliance." },
+  { id: 2, name: "APEDA Registered", body: "Govt. of India", desc: "Registered for the export of scheduled agricultural products, ensuring international compliance." },
   { id: 3, name: "ISO 22000", body: "International Organization for Standardization", desc: "Certified for Food Safety Management Systems, guaranteeing safe handling across our supply chain." },
 ];
 
@@ -70,7 +70,7 @@ const QUALITY_PILLARS = [
   },
   {
     title: "Certifications",
-    description: "Venus Global Exports holds major industry certifications including FSSAI, APEDA, and ISO, giving our global buyers complete confidence in our products.",
+    description: "Venus Export holds major industry certifications including FSSAI, APEDA, and ISO, giving our international buyers complete confidence in our products.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
         <circle cx="12" cy="8" r="6"/>
@@ -86,7 +86,7 @@ export default function QualityPage() {
       <PageHeader
         title="Uncompromising Standards"
         subtitle="Quality Assurance"
-        description="At Venus Global Exports, quality is non-negotiable. Every shipment is a promise of freshness, safety, and excellence."
+        description="At Venus Export, quality is non-negotiable. Every shipment is a promise of freshness, safety, and excellence."
         imageSrc="/images/product-rice.jpg"
       />
 
@@ -101,7 +101,7 @@ export default function QualityPage() {
                 The Venus Quality Promise
               </h2>
               <p className="text-[#64748B] leading-relaxed mb-4">
-                At Venus Global Exports, we believe that the foundation of a successful global food business is built on uncompromising trust. Our quality promise is simple: we never export a product that we wouldn't proudly serve to our own families. Every grain, fruit, vegetable, and spice that carries the Venus name represents the absolute pinnacle of Indian agriculture.
+                At Venus Export, we believe that the foundation of a successful international food business is built on uncompromising trust. Our quality promise is simple: we never export a product that we wouldn't proudly serve to our own families. Every grain, fruit, vegetable, and spice that carries the Venus name represents the absolute pinnacle of Indian agriculture.
               </p>
               <p className="text-[#64748B] leading-relaxed">
                 We enforce a zero-compromise policy on food safety. From regular soil testing at our partner farms to stringent residue checks before dispatch, we maintain complete traceability. If a batch does not meet our exact physical, chemical, and biological specifications, it is unconditionally rejected. That is our commitment to our international buyers.

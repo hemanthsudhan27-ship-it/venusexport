@@ -132,7 +132,7 @@ export default function WhyVenus() {
           {[
             {
               title: "Assured Premium Quality",
-              desc: "Every product inspected to meet global food safety standards before export.",
+              desc: "Every product inspected to meet international food safety standards before export.",
               icon: "🛡️",
               tag: "Quality First",
             },

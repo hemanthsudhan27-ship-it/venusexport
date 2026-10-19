@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/products", label: "Products" },
-  { href: "/global-reach", label: "Global Reach" },
+  { href: "/worldwide-reach", label: "Worldwide Reach" },
   { href: "/quality", label: "Quality Assurance" },
   { href: "/contact", label: "Contact & RFQ" },
 ];
@@ -45,14 +45,14 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center mb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7A03F] rounded-lg">
               <Image
                 src="/logo/logo.png"
-                alt="Venus Global Exports Logo"
+                alt="Venus Export Logo"
                 width={220}
                 height={60}
                 className="h-12 w-auto object-contain brightness-110"
               />
             </Link>
             <p className="text-sm text-slate-300 leading-relaxed mb-6 max-w-sm">
-              Venus Global Exports is India&apos;s trusted international agro-commodity merchant exporter. Connecting premium Indian agricultural harvest with global distributors, supermarket chains, and food processors.
+              Venus Export is India&apos;s trusted international agro-commodity merchant exporter. Connecting premium Indian agricultural harvest with international distributors, supermarket chains, and food processors.
             </p>
 
             {/* Certifications Badge in Footer */}
@@ -137,7 +137,7 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-slate-400">WhatsApp Inquiry</p>
                   <a
-                    href={getWhatsAppUrl("Hello Venus Global Exports")}
+                    href={getWhatsAppUrl("Hello Venus Export")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-medium text-white hover:text-[#D7A03F] transition-colors"
@@ -156,7 +156,7 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-slate-400">Official RFQ Email</p>
                   <a
-                    href={getMailtoUrl("Export Inquiry — Venus Global Exports")}
+                    href={getMailtoUrl("Export Inquiry — Venus Export")}
                     className="font-medium text-white hover:text-[#D7A03F] transition-colors"
                   >
                     Inquire via Email
@@ -181,7 +181,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© {year} Venus Global Exports. All rights reserved. Global agro-commodity trade partner.</p>
+          <p>© {year} Venus Export. All rights reserved. International agro-commodity trade partner.</p>
           <div className="flex items-center gap-6">
             <Link href="/contact" className="hover:text-[#D7A03F] transition-colors">Export Terms</Link>
             <Link href="/quality" className="hover:text-[#D7A03F] transition-colors">Quality Assurance</Link>

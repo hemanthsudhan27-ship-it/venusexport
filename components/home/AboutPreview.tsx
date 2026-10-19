@@ -37,7 +37,7 @@ export default function AboutPreview() {
             <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(6,38,92,0.15)]">
               <Image
                 src="/images/product-coconut.jpg"
-                alt="Premium Indian agricultural products sourced by Venus Global Exports"
+                alt="Premium Indian agricultural products sourced by Venus Export"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -68,7 +68,7 @@ export default function AboutPreview() {
                 </svg>
               </div>
               <p className="text-xs font-bold text-[#08063A] leading-snug">Export-Ready Products</p>
-              <p className="text-[11px] text-[#6B7280] mt-1 leading-relaxed">Sourced, packed & shipped to global standards.</p>
+              <p className="text-[11px] text-[#6B7280] mt-1 leading-relaxed">Sourced, packed & shipped to international standards.</p>
             </div>
           </div>
 
@@ -88,11 +88,11 @@ export default function AboutPreview() {
               className="section-title mb-6"
             >
               WELCOME TO<br />
-              <span className="gradient-text">VENUS GLOBAL EXPORTS</span>
+              <span className="gradient-text">VENUS EXPORT</span>
             </h2>
 
             <p className="text-base text-[#374151] leading-relaxed mb-4">
-              Venus Global Exports is an India-based food export company dedicated to bringing the finest agricultural products from Indian farms to international markets. Our mission is to be the most trusted bridge between quality Indian produce and the world&apos;s growing demand for premium food products.
+              Venus Export is an India-based food export company dedicated to bringing the finest agricultural products from Indian farms to international markets. Our mission is to be the most trusted bridge between quality Indian produce and the world&apos;s growing demand for premium food products.
             </p>
 
             <p className="text-base text-[#374151] leading-relaxed mb-8">

@@ -5,9 +5,9 @@ import ContactCTA from "@/components/home/ContactCTA";
 import PageHeader from "@/components/ui/PageHeader";
 
 export const metadata: Metadata = {
-  title: "About Us — Venus Global Exports",
+  title: "About Us — Venus Export",
   description:
-    "Learn about Venus Global Exports — our story, mission, vision, and the values that guide our food export business from India to the world.",
+    "Learn about Venus Export — our story, mission, vision, and the values that guide our food export business from India to the world.",
   alternates: { canonical: "/about" },
 };
 
@@ -23,8 +23,8 @@ export default function AboutPage() {
     <>
       <PageHeader
         title="Who We Are"
-        subtitle="About Venus Global Exports"
-        description="A premier international food export enterprise connecting India's rich agricultural heritage with global food markets through trust, transparency, and unyielding quality."
+        subtitle="About Venus Export"
+        description="A premier international food export enterprise connecting India's rich agricultural heritage with international food markets through trust, transparency, and unyielding quality."
         imageSrc="/images/product-rice.jpg"
       />
 
@@ -44,20 +44,20 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-[#5A6A7D] text-base md:text-lg leading-relaxed">
                 <p>
-                  Venus Global Exports was founded with a singular, resolute vision: to bridge the gap between India&apos;s rich, diverse agricultural heritage and the rigorous demands of global food markets. Established to elevate the standards of Indian food exports, we recognized early on that international trade required more than just logistics—it demanded absolute integrity, consistent quality, and an unyielding commitment to food safety.
+                  Venus Export was founded with a singular, resolute vision: to bridge the gap between India&apos;s rich, diverse agricultural heritage and the rigorous demands of international food markets. Established to elevate the standards of Indian food exports, we recognized early on that international trade required more than just logistics—it demanded absolute integrity, consistent quality, and an unyielding commitment to food safety.
                 </p>
                 <p>
                   Our leadership team brings decades of combined expertise in agronomy, supply chain management, and international commodities trading. We have spent years building deep-rooted relationships directly with farming communities across India&apos;s most fertile regions, ensuring that our sourcing is not only premium but also sustainable and ethical.
                 </p>
                 <p>
-                  Today, Venus Global Exports stands as a trusted partner for importers, distributors, and wholesalers worldwide. From our meticulous farm-level quality checks to our robust sea and air freight logistics, we ensure that the very best of India&apos;s harvest reaches your destination port exactly as promised.
+                  Today, Venus Export stands as a trusted partner for importers, distributors, and wholesalers worldwide. From our meticulous farm-level quality checks to our robust sea and air freight logistics, we ensure that the very best of India&apos;s harvest reaches your destination port exactly as promised.
                 </p>
               </div>
             </div>
             <div className="relative aspect-square rounded-[32px] overflow-hidden shadow-2xl border border-slate-200">
               <Image
                 src="/images/product-rice.jpg"
-                alt="Premium agricultural products sourced by Venus Global Exports"
+                alt="Premium agricultural products sourced by Venus Export"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -95,7 +95,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-extrabold text-white mb-4">Our Mission</h3>
               <p className="text-slate-300 leading-relaxed text-base">
-                To responsibly source and deliver the highest quality Indian agricultural products to the global market, creating enduring value for our international partners while empowering the farming communities we work with.
+                To responsibly source and deliver the highest quality Indian agricultural products to international markets, creating enduring value for our international partners while empowering the farming communities we work with.
               </p>
             </div>
 
@@ -110,7 +110,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-extrabold text-white mb-4">Our Vision</h3>
               <p className="text-slate-300 leading-relaxed text-base">
-                To be recognized globally as the premier hallmark of trust, safety, and excellence in the Indian food export industry, continuously innovating our supply chain to meet tomorrow&apos;s global food security and quality standards.
+                To be recognized worldwide as the premier hallmark of trust, safety, and excellence in the Indian food export industry, continuously innovating our supply chain to meet tomorrow&apos;s international food security and quality standards.
               </p>
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl border border-slate-200">
               <Image
                 src="/images/product-coconut.jpg"
-                alt="Venus Global Exports product quality and freshness"
+                alt="Venus Export product quality and freshness"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -178,10 +178,10 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-[#5A6A7D] text-base md:text-lg leading-relaxed mb-8">
                 <p>
-                  In a complex global supply chain, reliability is everything. Venus Global Exports differentiates itself through a vertically integrated approach. By bypassing unnecessary middlemen and working directly with certified growers, we maintain total control over product quality, traceability, and competitive pricing.
+                  In a complex international supply chain, reliability is everything. Venus Export differentiates itself through a vertically integrated approach. By bypassing unnecessary middlemen and working directly with certified growers, we maintain total control over product quality, traceability, and competitive pricing.
                 </p>
                 <p>
-                  Our international buyers choose us because we mitigate the risks of cross-border trade. We offer highly flexible, tailored logistics solutions—including both sea and air freight—and handle all complex export documentation, customs clearance, and phytosanitary certifications in-house. When you partner with Venus Global Exports, you are guaranteed a seamless, transparent, and strictly compliant procurement experience.
+                  Our international buyers choose us because we mitigate the risks of cross-border trade. We offer highly flexible, tailored logistics solutions—including both sea and air freight—and handle all complex export documentation, customs clearance, and phytosanitary certifications in-house. When you partner with Venus Export, you are guaranteed a seamless, transparent, and strictly compliant procurement experience.
                 </p>
               </div>
               <Link
@@ -209,10 +209,10 @@ export default function AboutPage() {
             Our Future Horizon
           </h2>
           <p className="text-[#5A6A7D] text-base md:text-lg leading-relaxed mb-6">
-            As we look to the horizon, Venus Global Exports is strategically expanding our global footprint. We are actively diversifying our product portfolio to include organic-certified spices, premium millets, and value-added coconut products, catering to the rising international demand for health-conscious and sustainable foods. Simultaneously, we are pursuing advanced international quality certifications to deepen our presence in stringent markets across Europe and North America.
+            As we look to the horizon, Venus Export is strategically expanding our international footprint. We are actively diversifying our product portfolio to include organic-certified spices, premium millets, and value-added coconut products, catering to the rising international demand for health-conscious and sustainable foods. Simultaneously, we are pursuing advanced international quality certifications to deepen our presence in stringent markets across Europe and North America.
           </p>
           <p className="text-[#5A6A7D] text-base md:text-lg leading-relaxed">
-            Our long-term ambition is to transcend traditional export models by establishing a transparent, tech-enabled supply chain that tracks produce from Indian farms directly to international retail shelves. We envision Venus Global Exports not just as a trading partner, but as a global hallmark of Indian agricultural excellence—driving sustainable growth, uplifting local farming communities, and redefining the standards of trust and quality in the international food export industry.
+            Our long-term ambition is to transcend traditional export models by establishing a transparent, tech-enabled supply chain that tracks produce from Indian farms directly to international retail shelves. We envision Venus Export not just as a trading partner, but as an international hallmark of Indian agricultural excellence—driving sustainable growth, uplifting local farming communities, and redefining the standards of trust and quality in the international food export industry.
           </p>
         </div>
       </section>

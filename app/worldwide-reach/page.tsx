@@ -4,10 +4,10 @@ import PageHeader from "@/components/ui/PageHeader";
 import DottedWorldMap from "@/components/ui/DottedWorldMap";
 
 export const metadata: Metadata = {
-  title: "Global Reach",
+  title: "Worldwide Reach",
   description:
-    "Venus Global Exports connects India with international food markets. Explore our export destinations and global logistics capabilities.",
-  alternates: { canonical: "/global-reach" },
+    "Venus Export connects India with international food markets. Explore our export destinations and international logistics capabilities.",
+  alternates: { canonical: "/worldwide-reach" },
 };
 
 const REGIONS = [
@@ -41,13 +41,13 @@ const EXPORT_STEPS = [
   { step: "05", title: "Delivery", desc: "Products arrive at the destination port and are available for customs clearance." },
 ];
 
-export default function GlobalReachPage() {
+export default function WorldwideReachPage() {
   return (
     <>
       <PageHeader
         title="Connecting Markets Worldwide"
-        subtitle="Global Reach"
-        description="Venus Global Exports utilizes extensive sea and air freight networks to ensure timely and reliable delivery of premium food products anywhere in the world."
+        subtitle="Worldwide Reach"
+        description="Venus Export utilizes extensive sea and air freight networks to ensure timely and reliable delivery of premium food products anywhere in the world."
         imageSrc="/images/hero-new.jpg"
       />
 

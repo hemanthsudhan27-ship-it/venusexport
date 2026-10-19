@@ -20,7 +20,7 @@ const NAV_LINKS = [
       { href: "/products/spices", label: "Spices" },
     ],
   },
-  { href: "/global-reach", label: "Global Reach" },
+  { href: "/worldwide-reach", label: "Worldwide Reach" },
   { href: "/quality", label: "Quality" },
   { href: "/contact", label: "Contact" },
 ];
@@ -88,11 +88,11 @@ export default function Navbar() {
           <Link
             href="/"
             className="flex items-center flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8102E] rounded-lg"
-            aria-label="Venus Global Exports — Home"
+            aria-label="Venus Export — Home"
           >
             <Image
               src="/logo/logo.png"
-              alt="Venus Global Exports Logo"
+              alt="Venus Export Logo"
               width={180}
               height={52}
               className="h-11 lg:h-12 w-auto object-contain"

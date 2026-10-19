@@ -33,7 +33,7 @@ const PRODUCTS = [
   {
     slug: "spices",
     name: "Spices & Herbs",
-    tagline: "Authentic Indian spices selected to deliver rich aroma and superior quality globally.",
+    tagline: "Authentic Indian spices selected to deliver rich aroma and superior quality worldwide.",
     image: "/images/product-spices-v2.jpg",
   },
 ];
@@ -82,7 +82,7 @@ export default function ProductsPreview() {
             className="mt-4 text-base text-[#4B5563] max-w-2xl mx-auto leading-relaxed reveal"
             style={{ transitionDelay: "0.2s" }}
           >
-            Venus Global Exports connects carefully sourced premium food products with international markets — from India&apos;s fields to tables around the world.
+            Venus Export connects carefully sourced premium food products with international markets — from India&apos;s fields to tables around the world.
           </p>
         </div>
 
@@ -104,7 +104,7 @@ export default function ProductsPreview() {
                 {/* Background image */}
                 <Image
                   src={product.image}
-                  alt={`Premium export quality ${product.name.toLowerCase()} from Venus Global Exports`}
+                  alt={`Premium export quality ${product.name.toLowerCase()} from Venus Export`}
                   fill
                   sizes="(max-width: 640px) 100vw, 80vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"

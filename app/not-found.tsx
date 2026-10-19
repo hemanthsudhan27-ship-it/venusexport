@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "404 - Page Not Found | Venus Global Exports",
+  title: "404 - Page Not Found | Venus Export",
   description: "The page you are looking for does not exist.",
 };
 

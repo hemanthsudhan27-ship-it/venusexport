@@ -18,7 +18,7 @@ const STEPS = [
   {
     number: "02",
     title: "Quality Lab Inspection",
-    description: "Every shipment undergoes multi-point inspection to meet APEDA, FSSAI, and global food safety thresholds.",
+    description: "Every shipment undergoes multi-point inspection to meet APEDA, FSSAI, and international food safety thresholds.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="m9 12 2 2 4-4"/>
@@ -52,7 +52,7 @@ const STEPS = [
   {
     number: "05",
     title: "Port Delivery & Support",
-    description: "Seamless customs clearance and on-time arrival at the designated global destination port with live status tracking.",
+    description: "Seamless customs clearance and on-time arrival at the designated international destination port with live status tracking.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="10"/>
