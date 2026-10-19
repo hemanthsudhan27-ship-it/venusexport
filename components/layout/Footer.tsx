@@ -44,11 +44,12 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center mb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7A03F] rounded-lg">
               <Image
-                src="/logo/logo.png"
+                src="/logo/logo.svg"
                 alt="Venus Export Logo"
                 width={220}
                 height={60}
                 className="h-12 w-auto object-contain brightness-110"
+                unoptimized
               />
             </Link>
             <p className="text-sm text-slate-300 leading-relaxed mb-6 max-w-sm">

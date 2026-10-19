@@ -91,12 +91,13 @@ export default function Navbar() {
             aria-label="Venus Export — Home"
           >
             <Image
-              src="/logo/logo.png"
+              src="/logo/logo.svg"
               alt="Venus Export Logo"
               width={180}
               height={52}
               className="h-11 lg:h-12 w-auto object-contain"
               priority
+              unoptimized
             />
           </Link>
 
