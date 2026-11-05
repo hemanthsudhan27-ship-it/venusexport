@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import HeroSection from "@/components/home/HeroSection";
 import ProductsPreview from "@/components/home/ProductsPreview";
 import AboutPreview from "@/components/home/AboutPreview";
-import WhyVenus from "@/components/home/WhyVenus";
 import WorldwideReachPreview from "@/components/home/WorldwideReachPreview";
 import HowWeWork from "@/components/home/HowWeWork";
 import QualitySection from "@/components/home/QualitySection";
@@ -21,7 +20,6 @@ export default function HomePage() {
       <HeroSection />
       <ProductsPreview />
       <AboutPreview />
-      <WhyVenus />
       <WorldwideReachPreview />
       <HowWeWork />
       <QualitySection />
