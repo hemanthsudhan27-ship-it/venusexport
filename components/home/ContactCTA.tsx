@@ -92,7 +92,14 @@ export default function ContactCTA() {
           </motion.div>
 
           <motion.p variants={fadeInUp} className="mt-8 text-xs text-slate-400">
-            Or visit our{" "}
+            Email us directly at{" "}
+            <a
+              href={getMailtoUrl("Export RFQ Inquiry — Venus Export")}
+              className="text-[#D7A03F] underline underline-offset-4 hover:text-[#E5C06E]"
+            >
+              {SITE_CONFIG.contact.email}
+            </a>{" "}
+            or visit our{" "}
             <a href="/contact" className="text-[#D7A03F] underline underline-offset-4 hover:text-[#E5C06E]">
               Online Contact & Specification Form
             </a>{" "}

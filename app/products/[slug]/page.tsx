@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductBySlug, getAllSlugs } from "@/lib/products";
-import { getWhatsAppUrl, getMailtoUrl } from "@/lib/config";
+import { SITE_CONFIG, getWhatsAppUrl, getMailtoUrl } from "@/lib/config";
 import ContactCTA from "@/components/home/ContactCTA";
 
 interface Props {
@@ -128,7 +128,7 @@ export default async function ProductDetailPage({ params }: Props) {
               <p className="text-[#64748B] leading-relaxed mb-8">{product.description}</p>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 mb-3">
                 <Link
                   href="/contact"
                   id={`product-${slug}-enquire-cta`}
@@ -152,6 +152,18 @@ export default async function ProductDetailPage({ params }: Props) {
                   WhatsApp Enquiry
                 </a>
               </div>
+              <p className="text-xs text-[#64748B] mb-8">
+                Prefer email? Send a direct inquiry to{" "}
+                <a
+                  href={getMailtoUrl(
+                    `Export Enquiry: ${product.name} — Venus Export`,
+                    `Hello Venus Export,\n\nI am interested in importing ${product.name}. Please share product specifications, packaging options, and FOB/CIF quotation.`
+                  )}
+                  className="font-semibold text-[#0B65B2] hover:underline break-all"
+                >
+                  {SITE_CONFIG.contact.email}
+                </a>
+              </p>
             </div>
           </div>
         </div>

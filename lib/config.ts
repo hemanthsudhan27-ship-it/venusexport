@@ -15,12 +15,9 @@ export const SITE_CONFIG = {
   },
 
   contact: {
-    // ⚠️ Replace with actual phone number
-    phone: "+91 XXXXX XXXXX",
-    // ⚠️ Replace with actual WhatsApp number (digits only, with country code)
-    whatsapp: "91XXXXXXXXXX",
-    // ⚠️ Replace with actual email address
-    email: "info@venusexport.com",
+    phone: "+91 96336 18631",
+    whatsapp: "919633618631",
+    email: "vivekvadavathi007@gmail.com",
     // ⚠️ Replace with actual office address
     address: "Your Address Line 1\nCity, State\nPin: XXXXXX\nIndia",
   },
@@ -39,6 +36,10 @@ export const SITE_CONFIG = {
   },
 } as const;
 
+export function getTelUrl(): string {
+  return `tel:${SITE_CONFIG.contact.phone.replace(/\s+/g, "")}`;
+}
+
 export function getWhatsAppUrl(message?: string): string {
   const encoded = encodeURIComponent(
     message || "Hello, I am interested in your export products."
@@ -50,9 +51,9 @@ export function getMailtoUrl(
   subject?: string,
   body?: string
 ): string {
-  const params = new URLSearchParams();
-  params.set("subject", subject || "Export Enquiry — Venus Export");
-  params.set("body", body || "Hello, I am interested in your export products. Please provide more information.");
-  const query = params.toString();
-  return `mailto:${SITE_CONFIG.contact.email}${query ? `?${query}` : ""}`;
+  const encodedSubject = encodeURIComponent(subject || "Export Enquiry — Venus Export");
+  const encodedBody = encodeURIComponent(
+    body || "Hello, I am interested in your export products. Please provide more information."
+  );
+  return `mailto:${SITE_CONFIG.contact.email}?subject=${encodedSubject}&body=${encodedBody}`;
 }

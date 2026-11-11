@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SITE_CONFIG, getWhatsAppUrl, getMailtoUrl } from "@/lib/config";
+import { SITE_CONFIG, getWhatsAppUrl, getMailtoUrl, getTelUrl } from "@/lib/config";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, viewportOptions } from "@/lib/animations";
 
@@ -43,30 +43,70 @@ export default function ContactPage() {
   const [form, setForm] = useState<FormState>(INITIAL_STATE);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [whatsappRedirectUrl, setWhatsappRedirectUrl] = useState<string | null>(null);
+  const [emailRedirectUrl, setEmailRedirectUrl] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
+    if (error) setError(null);
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!form.name.trim() || !form.country.trim() || !form.email.trim()) {
+      setError("Please fill in your full name, country, and email address.");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    setError(null);
     setSubmitting(true);
 
-    // ⚠️ PLACEHOLDER — Connect this form to your backend or email service
-    // For now, opens mailto as fallback
-    const body = Object.entries(form)
-      .map(([k, v]) => `${k}: ${v}`)
-      .join("\n");
+    const whatsappMessage = [
+      "Hello Venus Export,",
+      "I would like to submit an export enquiry:",
+      "",
+      `*Full Name:* ${form.name.trim()}`,
+      `*Company / Organisation:* ${form.company.trim() || "N/A"}`,
+      `*Country:* ${form.country.trim()}`,
+      `*Email:* ${form.email.trim()}`,
+      `*Phone / WhatsApp:* ${form.phone.trim() || "N/A"}`,
+      `*Product Interested In:* ${form.product || "General Enquiry"}`,
+      `*Estimated Quantity:* ${form.quantity.trim() || "Not specified"}`,
+      `*Message:* ${form.message.trim() || "N/A"}`,
+    ].join("\n");
 
-    window.location.href = getMailtoUrl("Export Enquiry — Venus Export", body);
+    const emailSubject = `Export Enquiry${form.product ? ` (${form.product})` : ""} — Venus Export`;
+    const emailBody = [
+      `Full Name: ${form.name.trim()}`,
+      `Company: ${form.company.trim() || "N/A"}`,
+      `Country: ${form.country.trim()}`,
+      `Email: ${form.email.trim()}`,
+      `Phone / WhatsApp: ${form.phone.trim() || "N/A"}`,
+      `Product: ${form.product || "General Enquiry"}`,
+      `Estimated Quantity: ${form.quantity.trim() || "Not specified"}`,
+      "",
+      "Message:",
+      form.message.trim() || "N/A",
+    ].join("\n");
 
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitting(false);
-      setSubmitted(true);
-    }, 1200);
+    const whatsappUrl = getWhatsAppUrl(whatsappMessage);
+    const mailtoUrl = getMailtoUrl(emailSubject, emailBody);
+
+    setWhatsappRedirectUrl(whatsappUrl);
+    setEmailRedirectUrl(mailtoUrl);
+    setSubmitting(false);
+    setSubmitted(true);
+
+    window.location.href = whatsappUrl;
   };
 
   return (
@@ -93,20 +133,47 @@ export default function ContactPage() {
                 >
                   <div className="w-16 h-16 rounded-2xl bg-[#E8F4E6] flex items-center justify-center mb-6">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2E6B28" strokeWidth="2" aria-hidden="true">
-                      <path d="m9 12 2 2 4-4"/>
-                      <circle cx="12" cy="12" r="10"/>
+                      <path d="m9 12 2 2 4-4" />
+                      <circle cx="12" cy="12" r="10" />
                     </svg>
                   </div>
-                  <h2 className="text-2xl font-bold text-[#1A2E0A] mb-3">Enquiry Sent!</h2>
-                  <p className="text-[#5A6B52] leading-relaxed max-w-sm">
-                    Thank you for reaching out. We&apos;ll review your enquiry and get back to you shortly.
+                  <h2 className="text-2xl font-bold text-[#1A2E0A] mb-3">
+                    Redirecting to WhatsApp…
+                  </h2>
+                  <p className="text-[#5A6B52] leading-relaxed max-w-md">
+                    Your enquiry details have been prepared for WhatsApp ({SITE_CONFIG.contact.phone}). Click below if WhatsApp didn&apos;t open automatically.
                   </p>
-                  <button
-                    onClick={() => { setForm(INITIAL_STATE); setSubmitted(false); }}
-                    className="mt-6 px-6 py-3 rounded-xl bg-[#2E6B28] text-white text-sm font-semibold hover:bg-[#1E4A1A] transition-colors"
-                  >
-                    Send Another Enquiry
-                  </button>
+                  <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                    {whatsappRedirectUrl && (
+                      <a
+                        href={whatsappRedirectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3 rounded-xl bg-[#25D366] text-white text-sm font-semibold hover:bg-[#1ab955] transition-colors"
+                      >
+                        Open WhatsApp
+                      </a>
+                    )}
+                    {emailRedirectUrl && (
+                      <a
+                        href={emailRedirectUrl}
+                        className="px-6 py-3 rounded-xl border border-[#2E6B28] text-[#2E6B28] text-sm font-semibold hover:bg-[#E8F4E6] transition-colors"
+                      >
+                        Send via Email Instead
+                      </a>
+                    )}
+                    <button
+                      onClick={() => {
+                        setForm(INITIAL_STATE);
+                        setSubmitted(false);
+                        setWhatsappRedirectUrl(null);
+                        setEmailRedirectUrl(null);
+                      }}
+                      className="px-6 py-3 rounded-xl bg-[#2E6B28] text-white text-sm font-semibold hover:bg-[#1E4A1A] transition-colors"
+                    >
+                      Send Another Enquiry
+                    </button>
+                  </div>
                 </motion.div>
               ) : (
                 <form
@@ -116,6 +183,14 @@ export default function ContactPage() {
                   aria-label="Product enquiry form"
                   noValidate
                 >
+                  {error && (
+                    <div
+                      role="alert"
+                      className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+                    >
+                      {error}
+                    </div>
+                  )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="contact-name" className="block text-sm font-semibold text-[#1A2E0A] mb-1.5">
@@ -249,14 +324,15 @@ export default function ContactPage() {
                     id="contact-submit-btn"
                     type="submit"
                     disabled={submitting}
-                    className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#2E6B28] text-white font-semibold text-sm hover:bg-[#1E4A1A] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2E6B28] focus-visible:ring-offset-2"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#25D366] text-white font-semibold text-sm hover:bg-[#1ab955] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
                   >
-                    {submitting ? "Sending Enquiry…" : "Send Enquiry"}
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326z" />
+                    </svg>
+                    {submitting ? "Redirecting to WhatsApp…" : "Send Enquiry via WhatsApp"}
                   </button>
 
-                  <p className="text-xs text-[#64748B]">
-                    ⚠ This form currently opens your email client. To enable backend form submission, connect to your preferred email service.
-                  </p>
+
                 </form>
               )}
             </div>
@@ -266,23 +342,33 @@ export default function ContactPage() {
               <div className="bg-[#F3F7F0] rounded-2xl p-6 border border-[#D4E0CC]">
                 <h2 className="text-base font-bold text-[#1A2E0A] mb-5">Contact Information</h2>
                 <address className="not-italic space-y-4">
-                  <div className="flex items-center gap-3 text-sm text-[#5A6B52]">
-                    <div className="w-9 h-9 rounded-xl bg-white border border-[#D4E0CC] flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <a
+                    href={getTelUrl()}
+                    className="flex items-center gap-3 text-sm text-[#5A6B52] hover:text-[#2E6B28] transition-colors group"
+                  >
+                    <div className="w-9 h-9 rounded-xl bg-white border border-[#D4E0CC] flex items-center justify-center flex-shrink-0 group-hover:border-[#2E6B28] transition-colors" aria-hidden="true">
                       <svg width="14" height="14" viewBox="0 0 16 16" fill="#2E6B28">
-                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/>
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z" />
                       </svg>
                     </div>
-                    <span className="italic text-[#8FAB87]">Phone: To be updated</span>
-                  </div>
+                    <span className="font-medium text-[#1A2E0A] group-hover:text-[#2E6B28] transition-colors">
+                      {SITE_CONFIG.contact.phone}
+                    </span>
+                  </a>
 
-                  <div className="flex items-center gap-3 text-sm text-[#5A6B52]">
-                    <div className="w-9 h-9 rounded-xl bg-white border border-[#D4E0CC] flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <a
+                    href={getMailtoUrl("Export Enquiry — Venus Export")}
+                    className="flex items-center gap-3 text-sm text-[#5A6B52] hover:text-[#2E6B28] transition-colors group break-all"
+                  >
+                    <div className="w-9 h-9 rounded-xl bg-white border border-[#D4E0CC] flex items-center justify-center flex-shrink-0 group-hover:border-[#2E6B28] transition-colors" aria-hidden="true">
                       <svg width="14" height="14" viewBox="0 0 16 16" fill="#2E6B28">
-                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2z"/>
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2z" />
                       </svg>
                     </div>
-                    <span className="italic text-[#8FAB87]">Email: To be updated</span>
-                  </div>
+                    <span className="font-medium text-[#1A2E0A] group-hover:text-[#2E6B28] transition-colors">
+                      {SITE_CONFIG.contact.email}
+                    </span>
+                  </a>
 
                   <a
                     href={getWhatsAppUrl()}
@@ -292,16 +378,18 @@ export default function ContactPage() {
                   >
                     <div className="w-9 h-9 rounded-xl bg-white border border-[#D4E0CC] flex items-center justify-center flex-shrink-0 group-hover:border-[#25D366] transition-colors" aria-hidden="true">
                       <svg width="14" height="14" viewBox="0 0 16 16" fill="#25D366">
-                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326z"/>
+                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326z" />
                       </svg>
                     </div>
-                    <span>WhatsApp</span>
+                    <span className="font-medium text-[#1A2E0A] group-hover:text-[#25D366] transition-colors">
+                      WhatsApp ({SITE_CONFIG.contact.phone})
+                    </span>
                   </a>
 
                   <div className="flex items-start gap-3 text-sm text-[#5A6B52]">
                     <div className="w-9 h-9 rounded-xl bg-white border border-[#D4E0CC] flex items-center justify-center flex-shrink-0" aria-hidden="true">
                       <svg width="12" height="14" viewBox="0 0 12 16" fill="#2E6B28">
-                        <path d="M6 0C3.243 0 1 2.243 1 5c0 4.17 4.42 10.492 4.61 10.76a.5.5 0 0 0 .78 0C6.58 15.492 11 9.17 11 5c0-2.757-2.243-5-5-5m0 7.5A2.5 2.5 0 0 1 6 2.5a2.5 2.5 0 0 1 0 5"/>
+                        <path d="M6 0C3.243 0 1 2.243 1 5c0 4.17 4.42 10.492 4.61 10.76a.5.5 0 0 0 .78 0C6.58 15.492 11 9.17 11 5c0-2.757-2.243-5-5-5m0 7.5A2.5 2.5 0 0 1 6 2.5a2.5 2.5 0 0 1 0 5" />
                       </svg>
                     </div>
                     <span className="italic text-[#8FAB87]">Address: To be updated</span>
@@ -319,7 +407,7 @@ export default function ContactPage() {
                 aria-label="Chat on WhatsApp"
               >
                 <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/>
+                  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z" />
                 </svg>
                 Chat on WhatsApp
               </a>

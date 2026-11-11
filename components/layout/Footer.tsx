@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SITE_CONFIG, getWhatsAppUrl, getMailtoUrl } from "@/lib/config";
+import { SITE_CONFIG, getWhatsAppUrl, getMailtoUrl, getTelUrl } from "@/lib/config";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -132,6 +132,23 @@ export default function Footer() {
               <div className="flex items-start gap-3 text-sm text-slate-300">
                 <span className="mt-1 flex-shrink-0 w-6 h-6 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#D7A03F]" aria-hidden="true">
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z" />
+                  </svg>
+                </span>
+                <div>
+                  <p className="text-xs text-slate-400">Call / Trade Desk</p>
+                  <a
+                    href={getTelUrl()}
+                    className="font-medium text-white hover:text-[#D7A03F] transition-colors"
+                  >
+                    {SITE_CONFIG.contact.phone}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 text-sm text-slate-300">
+                <span className="mt-1 flex-shrink-0 w-6 h-6 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#D7A03F]" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
                     <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326z"/>
                   </svg>
                 </span>
@@ -143,7 +160,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="font-medium text-white hover:text-[#D7A03F] transition-colors"
                   >
-                    Start Direct Chat
+                    Start Direct Chat ({SITE_CONFIG.contact.phone})
                   </a>
                 </div>
               </div>
@@ -154,13 +171,13 @@ export default function Footer() {
                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741z"/>
                   </svg>
                 </span>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs text-slate-400">Official RFQ Email</p>
                   <a
                     href={getMailtoUrl("Export Inquiry — Venus Export")}
-                    className="font-medium text-white hover:text-[#D7A03F] transition-colors"
+                    className="font-medium text-white hover:text-[#D7A03F] transition-colors break-all"
                   >
-                    Inquire via Email
+                    {SITE_CONFIG.contact.email}
                   </a>
                 </div>
               </div>

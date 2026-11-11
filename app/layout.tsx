@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import SplashScreen from "@/components/layout/SplashScreen";
+import { SITE_CONFIG } from "@/lib/config";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -74,7 +75,8 @@ export default function RootLayout({
     description: "Premium food export from India, specializing in rice, coconut, vegetables, fruits, and spices.",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+91-8888888888",
+      telephone: SITE_CONFIG.contact.phone,
+      email: SITE_CONFIG.contact.email,
       contactType: "customer service",
       areaServed: "Worldwide",
       availableLanguage: "en",
