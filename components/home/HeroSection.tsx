@@ -32,6 +32,16 @@ export default function HeroSection() {
       {/* ── Navy Gradient Overlay (Nikosi-style: dark left → transparent right) ── */}
       <div className="hero-overlay-navy absolute inset-0 z-10" aria-hidden="true" />
 
+      {/* ── Top White-to-Transparent Gradient (makes brand logo crystal clear) ── */}
+      <div
+        className="absolute top-0 inset-x-0 h-40 sm:h-48 lg:h-52 z-10 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.85) 40%, rgba(255, 255, 255, 0.3) 75%, transparent 100%)",
+        }}
+        aria-hidden="true"
+      />
+
       {/* ── Extra bottom vignette for text readability ── */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"

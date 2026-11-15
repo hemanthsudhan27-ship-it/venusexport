@@ -13,22 +13,32 @@ export const metadata: Metadata = {
 const REGIONS = [
   {
     region: "Middle East",
-    description: "A primary destination for our premium non-basmati and basmati rice, as well as fresh vegetables. We maintain strong supply channels to the UAE, Saudi Arabia, and Oman.",
+    flags: "🇸🇦 🇦🇪 🇧🇭 🇶🇦 🇴🇲 🇰🇼",
+    countries: ["Saudi Arabia", "UAE", "Bahrain", "Qatar", "Oman", "Kuwait"],
+    description: "A primary destination for our premium non-basmati and basmati rice, as well as fresh vegetables. We maintain strong supply channels to Saudi Arabia, UAE, Bahrain, Qatar, Oman, and Kuwait.",
   },
   {
     region: "Europe",
-    description: "Exporting high-grade Indian spices and organic coconuts to the UK, Netherlands, and Germany, strictly adhering to stringent EU food safety regulations.",
+    flags: "🇬🇧 🇳🇱 🇩🇪 🇮🇹 🇫🇷 🇮🇪",
+    countries: ["UK", "Netherlands", "Germany", "Italy", "France", "Ireland"],
+    description: "Exporting high-grade Indian spices and organic coconuts to the UK, Netherlands, Germany, Italy, France, and Ireland, strictly adhering to stringent EU food safety regulations.",
   },
   {
     region: "Southeast Asia",
+    flags: "🇲🇾 🇸🇬",
+    countries: ["Malaysia", "Singapore"],
     description: "A growing market for our rice and fresh fruits. We leverage rapid maritime logistics to ensure maximum freshness upon arrival in Malaysia and Singapore.",
   },
   {
     region: "North America",
+    flags: "🇺🇸 🇨🇦",
+    countries: ["USA", "Canada"],
     description: "Supplying premium spices and specialty rice varieties to distributors across the USA and Canada, backed by complete farm-to-table traceability.",
   },
   {
     region: "Africa",
+    flags: "🇰🇪 🇿🇦",
+    countries: ["Kenya", "South Africa", "East & West Africa"],
     description: "Expanding our footprint in East and West Africa by providing bulk shipments of high-quality Indian rice and essential agricultural commodities.",
   },
 ];
@@ -82,10 +92,23 @@ export default function WorldwideReachPage() {
               <div
                 key={r.region}
                 role="listitem"
-                className="bg-white rounded-2xl p-6 border border-[#E2EBF5] hover:border-[#0B65B2] transition-colors duration-200"
+                className="bg-white rounded-2xl p-6 border border-[#E2EBF5] hover:border-[#0B65B2] hover:shadow-md transition-all duration-200 flex flex-col justify-between"
               >
-                <h3 className="text-lg font-bold text-[#0A1628] mb-3">{r.region}</h3>
-                <p className="text-sm text-[#64748B] leading-relaxed">{r.description}</p>
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xl tracking-wide">{r.flags}</span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#0A1628] mb-2">{r.region}</h3>
+                  <p className="text-sm text-[#64748B] leading-relaxed mb-4">{r.description}</p>
+                </div>
+                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-[#E2EBF5]">
+                  {r.countries.map((c) => (
+                    <span key={c} className="text-xs px-2.5 py-1 rounded-full bg-[#F5F8FC] text-[#0A1628] font-medium border border-[#E2EBF5]">
+                      {c}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

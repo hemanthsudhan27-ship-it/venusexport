@@ -69,6 +69,8 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  const isLightNav = scrolled || pathname === "/";
+
   const navBg = scrolled
     ? "bg-white/97 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.08)] border-b border-[#E8EDF2]"
     : "bg-transparent";
@@ -93,9 +95,9 @@ export default function Navbar() {
             <Image
               src="/logo/logo.svg"
               alt="Venus Export Logo"
-              width={180}
-              height={52}
-              className="h-11 lg:h-12 w-auto object-contain"
+              width={220}
+              height={64}
+              className="h-[48px] sm:h-[54px] lg:h-[60px] w-auto object-contain transition-all duration-200"
               priority
               unoptimized
             />
@@ -126,7 +128,7 @@ export default function Navbar() {
                       relative px-4 py-2.5 rounded-lg text-sm font-semibold nav-link-underline transition-all duration-200
                       ${isActive
                         ? "text-[#C8102E] active"
-                        : scrolled
+                        : isLightNav
                           ? "text-[#08063A] hover:text-[#C8102E]"
                           : "text-white hover:text-white/80"
                       }
@@ -199,7 +201,7 @@ export default function Navbar() {
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               onClick={() => setMenuOpen((p) => !p)}
-              className={`lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg transition-colors duration-200 ${scrolled ? "text-[#08063A] hover:bg-[#F4F6F8]" : "text-white hover:bg-white/10"}`}
+              className={`lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg transition-colors duration-200 ${isLightNav ? "text-[#08063A] hover:bg-black/5" : "text-white hover:bg-white/10"}`}
             >
               <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
               <motion.div
@@ -207,17 +209,17 @@ export default function Navbar() {
                 animate={menuOpen ? "open" : "closed"}
               >
                 <motion.span
-                  className={`block h-0.5 w-5 origin-center rounded-full ${scrolled ? "bg-[#08063A]" : "bg-white"}`}
+                  className={`block h-0.5 w-5 origin-center rounded-full ${isLightNav ? "bg-[#08063A]" : "bg-white"}`}
                   variants={{ open: { rotate: 45, y: 7 }, closed: { rotate: 0, y: 0 } }}
                   transition={{ duration: 0.25 }}
                 />
                 <motion.span
-                  className={`block h-0.5 w-5 rounded-full ${scrolled ? "bg-[#08063A]" : "bg-white"}`}
+                  className={`block h-0.5 w-5 rounded-full ${isLightNav ? "bg-[#08063A]" : "bg-white"}`}
                   variants={{ open: { opacity: 0, x: -8 }, closed: { opacity: 1, x: 0 } }}
                   transition={{ duration: 0.2 }}
                 />
                 <motion.span
-                  className={`block h-0.5 w-5 origin-center rounded-full ${scrolled ? "bg-[#08063A]" : "bg-white"}`}
+                  className={`block h-0.5 w-5 origin-center rounded-full ${isLightNav ? "bg-[#08063A]" : "bg-white"}`}
                   variants={{ open: { rotate: -45, y: -7 }, closed: { rotate: 0, y: 0 } }}
                   transition={{ duration: 0.25 }}
                 />

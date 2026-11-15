@@ -176,7 +176,7 @@ export default function SplashScreen() {
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 mb-6"
+              className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-6 sm:mb-8"
             >
               <Image
                 src="/logo/logo.svg"

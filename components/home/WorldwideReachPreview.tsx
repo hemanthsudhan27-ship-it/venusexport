@@ -6,11 +6,19 @@ import { fadeInUp, staggerContainer, viewportOptions } from "@/lib/animations";
 import DottedWorldMap from "@/components/ui/DottedWorldMap";
 
 const DESTINATIONS = [
-  { name: "Middle East", regions: "UAE, Saudi Arabia, Oman", flag: "🇦🇪 🇸🇦" },
-  { name: "Europe", regions: "UK, Netherlands, Germany", flag: "🇬🇧 🇳🇱" },
-  { name: "Southeast Asia", regions: "Malaysia, Singapore", flag: "🇸🇬 🇲🇾" },
-  { name: "North America", regions: "USA, Canada", flag: "🇺🇸 🇨🇦" },
-  { name: "Africa", regions: "East & West Africa", flag: "🇰🇪 🇿🇦" },
+  {
+    name: "Middle East",
+    regions: "🇸🇦 Saudi Arabia, 🇦🇪 UAE, 🇧🇭 Bahrain, 🇶🇦 Qatar, 🇴🇲 Oman, 🇰🇼 Kuwait",
+    flag: "🇸🇦 🇦🇪 🇧🇭 🇶🇦 🇴🇲 🇰🇼",
+  },
+  {
+    name: "Europe",
+    regions: "🇬🇧 UK, 🇳🇱 Netherlands, 🇩🇪 Germany, 🇮🇹 Italy, 🇫🇷 France, 🇮🇪 Ireland",
+    flag: "🇬🇧 🇳🇱 🇩🇪 🇮🇹 🇫🇷 🇮🇪",
+  },
+  { name: "Southeast Asia", regions: "🇲🇾 Malaysia, 🇸🇬 Singapore", flag: "🇸🇬 🇲🇾" },
+  { name: "North America", regions: "🇺🇸 USA, 🇨🇦 Canada", flag: "🇺🇸 🇨🇦" },
+  { name: "Africa", regions: "🇰🇪 Kenya, 🇿🇦 South Africa", flag: "🇰🇪 🇿🇦" },
 ];
 
 export default function WorldwideReachPreview() {
@@ -102,12 +110,12 @@ export default function WorldwideReachPreview() {
               className="group flex flex-col justify-between bg-white/[0.04] border border-white/10 hover:border-[#D7A03F]/50 hover:bg-white/[0.07] transition-all duration-300 rounded-2xl p-4"
             >
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm">{dest.flag}</span>
-                <span className="w-2 h-2 rounded-full bg-[#10B981] group-hover:shadow-[0_0_6px_#10B981] transition-shadow" />
+                <span className="text-sm tracking-wide">{dest.flag}</span>
+                <span className="w-2 h-2 rounded-full bg-[#10B981] group-hover:shadow-[0_0_6px_#10B981] transition-shadow shrink-0 ml-2" />
               </div>
               <div>
                 <p className="text-sm font-bold text-white group-hover:text-[#D7A03F] transition-colors">{dest.name}</p>
-                <p className="text-[11px] text-slate-400 mt-0.5">{dest.regions}</p>
+                <p className="text-[11px] text-slate-400 mt-1 leading-snug">{dest.regions}</p>
               </div>
             </motion.div>
           ))}
